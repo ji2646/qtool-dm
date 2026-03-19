@@ -258,6 +258,113 @@ select option,select optgroup{background:#1a1a1a}
 </style>
 </head>
 <body>
+
+<style>
+#login-screen{
+  position:fixed;inset:0;background:#080808;z-index:99999;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'DM Sans',sans-serif;
+}
+.login-card{
+  width:320px;background:#111;border:1px solid #222;
+  border-radius:12px;overflow:hidden;
+}
+.login-header{
+  background:linear-gradient(135deg,#00a94f,#00c85f);
+  padding:24px 24px 20px;
+}
+.login-header h1{
+  font-family:'Bebas Neue',sans-serif;font-size:28px;
+  color:#000;margin:0 0 4px;letter-spacing:.5px;
+}
+.login-header p{
+  font-size:11px;font-weight:700;color:rgba(0,0,0,.55);margin:0;
+}
+.login-body{padding:20px 24px 24px;}
+.login-field{margin-bottom:14px;}
+.login-field label{
+  display:block;font-size:9px;font-weight:900;
+  letter-spacing:1.5px;text-transform:uppercase;
+  color:#555;margin-bottom:6px;
+}
+.login-field input{
+  width:100%;padding:10px 12px;background:#1a1a1a;
+  border:1px solid #2a2a2a;border-radius:6px;
+  color:#fff;font-family:'DM Sans',sans-serif;font-size:14px;
+  box-sizing:border-box;outline:none;transition:border-color .15s;
+}
+.login-field input:focus{border-color:#00a94f;}
+#login-error{
+  display:none;font-size:10px;color:#ef4444;
+  margin-bottom:12px;font-weight:700;
+}
+#login-btn{
+  width:100%;padding:12px;background:#00a94f;border:none;
+  border-radius:6px;color:#000;font-family:'DM Sans',sans-serif;
+  font-size:12px;font-weight:900;letter-spacing:.5px;
+  text-transform:uppercase;cursor:pointer;transition:opacity .15s;
+}
+#login-btn:hover{opacity:.9;}
+.login-footer{
+  font-size:9px;color:#333;text-align:center;margin-top:14px;
+  letter-spacing:.5px;text-transform:uppercase;
+}
+</style>
+
+<div id="login-screen">
+  <div class="login-card">
+    <div class="login-header">
+      <h1>Price Card Tool</h1>
+      <p>Authorized Personnel Only</p>
+    </div>
+    <div class="login-body">
+      <div class="login-field">
+        <label>Username</label>
+        <input type="text" id="login-user" placeholder="Store # or DM" autocomplete="off" autocapitalize="none"/>
+      </div>
+      <div class="login-field">
+        <label>PIN</label>
+        <input type="password" id="login-pin" placeholder="••••••••" onkeydown="if(event.key==='Enter')doLogin()"/>
+      </div>
+      <div id="login-error">Incorrect username or PIN</div>
+      <button id="login-btn" onclick="doLogin()">Sign In</button>
+      <div class="login-footer">Internal use only</div>
+    </div>
+  </div>
+</div>
+
+<script>
+const USERS={
+  '747':'gsanchez',
+  '752':'ecruz',
+  '775':'mgomez',
+  '768':'jmanzo',
+  '777':'jsauceda',
+  '769':'rgarcia',
+  'DM':'jgarcia',
+  'dm':'jgarcia'
+};
+
+function doLogin(){
+  const u=document.getElementById('login-user').value.trim();
+  const p=document.getElementById('login-pin').value.trim().toLowerCase();
+  const err=document.getElementById('login-error');
+  if(USERS[u]&&USERS[u]===p){
+    document.getElementById('login-screen').style.display='none';
+    document.body.style.overflow='';
+    sessionStorage.setItem('qtool-auth',u);
+  } else {
+    err.style.display='block';
+    document.getElementById('login-pin').value='';
+    document.getElementById('login-pin').focus();
+  }
+}
+
+// Auto-lock on load — always require login on refresh
+sessionStorage.removeItem('qtool-auth');
+document.body.style.overflow='hidden';
+</script>
+
 <div class="hi-banner">
   <div style="padding:8px 14px;border-right:1px solid rgba(139,92,246,.3);display:flex;flex-direction:column;gap:2px">
     <div style="font-size:8px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;color:var(--purple);margin-bottom:1px">📡 AT&T Internet Air</div>
@@ -2487,10 +2594,15 @@ function showDMCard(){
   const savings=totalFRP-totalDevPrice;
   const savingsStr=savings>1?fmt(savings):null;
 
-  // Accessories
-  const hasProtect=voiceLines.some(l=>l.protect);
-  const apoTotal=S.apoPerDevice*voiceLines.filter(l=>!l.byod&&l.device&&l.device!=='byod_v').length;
-  const skeiwatchTotal=voiceLines.reduce((s,l)=>{const sk=SKEIWATCHES.find(x=>x.id===l.skeiwatch);return s+(sk?sk.price:0);},0);
+  // Accessories — all voice lines including upgrades
+  const allVoice=S.lines.filter(l=>l.cat==='v');
+  const hasProtect=allVoice.some(l=>l.protect);
+  const apoDevCount=allVoice.filter(l=>!l.byod&&l.device&&l.device!=='byod_v').length;
+  const apoTotal=S.apoPerDevice*apoDevCount;
+  const skeiwatchTotal=allVoice.reduce((s,l)=>{
+    const sk=SKEIWATCHES.find(x=>x.id===l.skeiwatch);
+    return s+(sk?sk.price:0);
+  },0);
   const totalAcc=apoTotal+skeiwatchTotal;
   const needsIdCheck=isSW&&voiceLines.some(l=>ID_CHECK_DEVS.includes(l.device));
 
@@ -2575,11 +2687,41 @@ function showDMCard(){
   // Build tiles array — then render smartly (never orphan)
   const tileData=[];
   if(!isUp&&hasVoice) tileData.push({l:'Monthly',v:fmt(c.grandMo)+'/mo',c:'rgba(255,255,255,.4)'});
-  if(S.finOn&&c.hasQual){
-    if(S.finType==='prog') tileData.push({l:'Progressive',v:'$'+c.progPayment.toFixed(2)+'/mo x3',c:'#f97316'});
-    else tileData.push({l:'Bread Pay',v:fmtMo(c.breadMo)+' x24',c:'#3b82f6'});
+  // Always show all PPP options when any device qualifies (≥$149.99)
+  if(c.hasQual){
+    const fb=c.finBase>0?c.finBase:(()=>{
+      // Recalc finBase from devices + acc if PPP not toggled
+      const devTotal=voiceLines.reduce((s,l)=>{
+        const dev=l.byod?null:devById(l.device,l.cat);
+        if(!dev) return s;
+        return s+devPrice(dev,l.lt,voiceLines.indexOf(l)+1,l.upQual!==false);
+      },0);
+      const tabTotal=tabLines.reduce((s,l)=>{const t=devById(l.device,'t');return s+(t?t.price:0);},0);
+      return devTotal+tabTotal+totalAcc;
+    })();
+    const progTotal=fb*(1+PROG_FEE);
+    const progMo=Math.ceil(progTotal/3*100)/100;
+    tileData.push({l:'Progressive /mo',v:'$'+progMo.toFixed(2)+' × 3',c:'#f97316'});
+    const bt0=fb*(1+TAX);
+    const bread0=Math.ceil(bt0/24*100)/100;
+    tileData.push({l:'Bread 0% APR',v:'$'+bread0.toFixed(2)+' × 24',c:'#3b82f6'});
+    const r=14.99/100/12;
+    const bread14=Math.ceil(bt0*r*Math.pow(1+r,24)/(Math.pow(1+r,24)-1)*100)/100;
+    tileData.push({l:'Bread 14.99% APR',v:'$'+bread14.toFixed(2)+' × 24',c:'#6366f1'});
   }
-  if(apoTotal>0) tileData.push({l:'APO',v:fmt(apoTotal),c:'rgba(255,255,255,.3)'});
+  if(apoTotal>0||skeiwatchTotal>0){
+    if(apoTotal>0&&skeiwatchTotal>0){
+      // Both — show each + combined
+      tileData.push({l:'APO',v:fmt(apoTotal),c:'rgba(255,255,255,.3)'});
+      tileData.push({l:'Skeiwatch(es)',v:fmt(skeiwatchTotal),c:'rgba(255,255,255,.3)'});
+      tileData.push({l:'Total Accessories',v:fmt(totalAcc),c:'#00c85f',span:true});
+    } else if(apoTotal>0){
+      tileData.push({l:'APO',v:fmt(apoTotal),c:'rgba(255,255,255,.3)'});
+    } else {
+      // Skeiwatch only — still counts toward PPP
+      tileData.push({l:'Skeiwatch(es) — counts toward PPP',v:fmt(skeiwatchTotal),c:'rgba(255,255,255,.3)',span:true});
+    }
+  }
   if(skeiTileVal) tileData.push({l:'Skeiwatch',v:skeiTileVal,c:'rgba(255,255,255,.3)',small:true,span:true});
   if(hasProtect) tileData.push({l:'Protect',v:'Included',c:'rgba(255,255,255,.3)'});
   if(hasTab) tileData.push({l:'Tablet Plan',v:fmt(tabLines.length*TABLET_PLAN)+'/mo',c:'rgba(255,255,255,.3)'});
@@ -2689,8 +2831,15 @@ function copyDMCard(){
   txt+=`\n`;
   txt+=`Monthly: ${fmt(c.grandMo)}/mo\n`;
   if(S.finOn&&c.hasQual){
-    if(S.finType==='prog') txt+=`Progressive: $${c.progPayment.toFixed(2)}/mo x3\n`;
-    else txt+=`Bread Pay: ${fmtMo(c.breadMo)} x24\n`;
+    const fb=c.finBase;
+    const progMo=Math.ceil(fb*(1+PROG_FEE)/3*100)/100;
+    const bt0=fb*(1+TAX);
+    const bread0=Math.ceil(bt0/24*100)/100;
+    const r=14.99/100/12;
+    const bread14=Math.ceil(bt0*r*Math.pow(1+r,24)/(Math.pow(1+r,24)-1)*100)/100;
+    txt+=`Progressive: $${progMo.toFixed(2)}/mo x3\n`;
+    txt+=`Bread 0%: $${bread0.toFixed(2)}/mo x24\n`;
+    txt+=`Bread 14.99%: $${bread14.toFixed(2)}/mo x24\n`;
   }
   if(apoTotal+skeiwatchTotal>0) txt+=`Accessories: ${fmt(apoTotal+skeiwatchTotal)}\n`;
   if(hasProtect) txt+=`Protect: Included\n`;
@@ -2707,10 +2856,10 @@ function copyDMCard(){
 
 function saveDMPng(){
   const btn=$('dm-save-btn');
-  btn.textContent='Saving...';
+  btn.textContent='Generating...';
   btn.disabled=true;
   const card=$('dm-card');
-  // Load html2canvas if not already loaded
+
   function doCapture(){
     html2canvas(card,{
       backgroundColor:'#0d0d0d',
@@ -2718,10 +2867,18 @@ function saveDMPng(){
       useCORS:true,
       logging:false
     }).then(canvas=>{
-      const link=document.createElement('a');
-      link.download='deal-card.png';
-      link.href=canvas.toDataURL('image/png');
-      link.click();
+      const imgUrl=canvas.toDataURL('image/png');
+      // Show full-screen so user can long-press to save to Photos
+      const overlay=document.createElement('div');
+      overlay.style.cssText='position:fixed;inset:0;background:#000;z-index:999999;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;box-sizing:border-box';
+      overlay.innerHTML=`
+        <div style="font-size:11px;font-weight:700;color:#aaa;margin-bottom:12px;letter-spacing:.5px;text-transform:uppercase">
+          Long press image to Save to Photos
+        </div>
+        <img src="${imgUrl}" style="max-width:100%;max-height:80vh;border-radius:10px;box-shadow:0 0 40px rgba(0,169,79,.2)"/>
+        <button onclick="this.parentElement.remove()" style="margin-top:16px;padding:12px 32px;background:#222;border:1px solid #444;border-radius:8px;color:#fff;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;cursor:pointer">Done</button>
+      `;
+      document.body.appendChild(overlay);
       btn.textContent='Save PNG';
       btn.disabled=false;
     }).catch(()=>{
@@ -2729,6 +2886,7 @@ function saveDMPng(){
       btn.disabled=false;
     });
   }
+
   if(window.html2canvas){
     doCapture();
   } else {
