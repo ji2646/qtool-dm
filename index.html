@@ -15,7 +15,7 @@
   --bread:#3B82F6;--prog:#F97316;
   --warn:#F59E0B;--err:#EF4444;--ok:#22C55E;
   --purple:#8B5CF6;--indigo:#6366F1;
-  --r:10px;--r2:6px;
+  --r:12px;--r2:8px;
 }
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--t1);min-height:100vh;font-size:13px}
 header{background:rgba(0,0,0,.95);backdrop-filter:blur(12px);border-bottom:2px solid var(--g);padding:11px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:37px;z-index:200}
@@ -93,21 +93,21 @@ input:checked+.tslide:before{transform:translateX(14px)}
 
 /* LINE CARD */
 .lcard{background:var(--s2);border:1px solid var(--bd);border-radius:var(--r);margin-bottom:8px;overflow:hidden}
-.lcard-head{padding:9px 12px;display:flex;align-items:center;gap:6px;background:var(--s2);border-bottom:1px solid var(--bd)}
+.lcard-head{padding:9px 12px;display:flex;align-items:center;gap:7px;background:var(--s2);border-bottom:1px solid var(--bd)}
 .lnum{width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;flex-shrink:0;letter-spacing:-.5px}
 .lnum.v{background:var(--g);color:#000}
 .lnum.w{background:var(--indigo);color:#fff}
 .lnum.t{background:var(--purple);color:#fff}
 .lnum.h{background:var(--warn);color:#000}
 .lcat{font-size:9px;font-weight:900;color:var(--t3);min-width:40px;letter-spacing:1px;text-transform:uppercase}
-.ltypes{display:flex;gap:0;border:1px solid var(--bd2);border-radius:var(--r2);overflow:hidden}
-.lt{padding:4px 11px;border-right:1px solid var(--bd2);background:var(--s4);color:var(--t3);font-size:9px;font-weight:800;cursor:pointer;transition:all .12s;font-family:'DM Sans';letter-spacing:.8px;user-select:none;text-transform:uppercase}
+.ltypes{display:flex;gap:0;border:1px solid var(--bd2);border-radius:6px;overflow:hidden}
+.lt{padding:3px 9px;border-right:1px solid var(--bd2);background:var(--s4);color:var(--t3);font-size:9px;font-weight:800;cursor:pointer;transition:all .12s;font-family:'DM Sans';letter-spacing:.5px;user-select:none;text-transform:uppercase}
 .lt:last-child{border-right:none}
 .lt:hover{color:var(--t2);background:var(--s3)}
 .lt.sw.on{background:var(--warn);border-color:var(--warn);color:#000}
 .lt.nw.on{background:var(--g);border-color:var(--g);color:#000}
 .lt.up.on{background:var(--indigo);border-color:var(--indigo);color:#fff}
-.byod-chip{padding:3px 9px;border:1px solid var(--bd2);border-radius:var(--r2);cursor:pointer;font-size:9px;font-weight:800;color:var(--t3);transition:all .12s;user-select:none;background:var(--s4);text-transform:uppercase;letter-spacing:.3px}
+.byod-chip{padding:3px 9px;border:1px solid var(--bd2);border-radius:6px;cursor:pointer;font-size:9px;font-weight:800;color:var(--t3);transition:all .12s;user-select:none;background:var(--s4);text-transform:uppercase;letter-spacing:.3px}
 .byod-chip.on{background:var(--purple);border-color:var(--purple);color:#fff}
 .rm{background:none;border:1px solid transparent;color:var(--t3);cursor:pointer;font-size:13px;line-height:1;padding:4px 7px;border-radius:var(--r2);transition:all .12s;font-family:'DM Sans';font-weight:700}
 .rm:hover{border-color:var(--bd2);color:var(--t1);background:var(--s3)}
@@ -130,7 +130,7 @@ select option,select optgroup{background:#1a1a1a}
 .feat-section{grid-column:1/-1;border-top:1px solid var(--bd);padding-top:10px;margin-top:4px}
 .feat-lbl{font-size:8px;font-weight:900;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:7px}
 .feat-chips{display:flex;flex-wrap:wrap;gap:5px}
-.chip{display:inline-flex;align-items:center;gap:4px;padding:5px 11px;border:1px solid var(--bd2);background:var(--s3);border-radius:4px;cursor:pointer;font-size:10px;font-weight:700;color:var(--t3);transition:all .12s;user-select:none;white-space:nowrap;letter-spacing:.2px}
+.chip{display:inline-flex;align-items:center;gap:4px;padding:5px 11px;border:1px solid var(--bd2);background:var(--s3);border-radius:8px;cursor:pointer;font-size:10px;font-weight:700;color:var(--t3);transition:all .12s;user-select:none;white-space:nowrap;letter-spacing:.2px}
 .chip:hover{background:var(--s4);color:var(--t2)}
 .chip.on{color:var(--t1)}
 .chip.on.protect{border-color:var(--bread);background:rgba(59,130,246,.1);color:var(--bread)}
@@ -265,68 +265,31 @@ select option,select optgroup{background:#1a1a1a}
   display:flex;align-items:center;justify-content:center;
   font-family:'DM Sans',sans-serif;
 }
-.login-card{
-  width:320px;background:#111;border:1px solid #222;
-  border-radius:12px;overflow:hidden;
-}
-.login-header{
-  background:linear-gradient(135deg,#00a94f,#00c85f);
-  padding:24px 24px 20px;
-}
-.login-header h1{
-  font-family:'Bebas Neue',sans-serif;font-size:28px;
-  color:#000;margin:0 0 4px;letter-spacing:.5px;
-}
-.login-header p{
-  font-size:11px;font-weight:700;color:rgba(0,0,0,.55);margin:0;
-}
-.login-body{padding:20px 24px 24px;}
-.login-field{margin-bottom:14px;}
-.login-field label{
-  display:block;font-size:9px;font-weight:900;
-  letter-spacing:1.5px;text-transform:uppercase;
-  color:#555;margin-bottom:6px;
-}
-.login-field input{
-  width:100%;padding:10px 12px;background:#1a1a1a;
-  border:1px solid #2a2a2a;border-radius:6px;
-  color:#fff;font-family:'DM Sans',sans-serif;font-size:14px;
-  box-sizing:border-box;outline:none;transition:border-color .15s;
-}
+.login-card{width:300px;background:#111;border:1px solid #222;border-radius:12px;overflow:hidden;}
+.login-header{background:linear-gradient(135deg,#00a94f,#00c85f);padding:22px 22px 18px;}
+.login-header h1{font-family:'Bebas Neue',sans-serif;font-size:26px;color:#000;margin:0 0 3px;letter-spacing:.5px;}
+.login-header p{font-size:10px;font-weight:700;color:rgba(0,0,0,.5);margin:0;}
+.login-body{padding:20px 22px 22px;}
+.login-field label{display:block;font-size:9px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;color:#555;margin-bottom:6px;}
+.login-field input{width:100%;padding:10px 12px;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:6px;color:#fff;font-family:'DM Sans',sans-serif;font-size:14px;box-sizing:border-box;outline:none;transition:border-color .15s;}
 .login-field input:focus{border-color:#00a94f;}
-#login-error{
-  display:none;font-size:10px;color:#ef4444;
-  margin-bottom:12px;font-weight:700;
-}
-#login-btn{
-  width:100%;padding:12px;background:#00a94f;border:none;
-  border-radius:6px;color:#000;font-family:'DM Sans',sans-serif;
-  font-size:12px;font-weight:900;letter-spacing:.5px;
-  text-transform:uppercase;cursor:pointer;transition:opacity .15s;
-}
-#login-btn:hover{opacity:.9;}
-.login-footer{
-  font-size:9px;color:#333;text-align:center;margin-top:14px;
-  letter-spacing:.5px;text-transform:uppercase;
-}
+#login-error{display:none;font-size:10px;color:#ef4444;margin:8px 0 10px;font-weight:700;}
+#login-btn{width:100%;padding:11px;background:#00a94f;border:none;border-radius:6px;color:#000;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:900;letter-spacing:.5px;text-transform:uppercase;cursor:pointer;margin-top:14px;}
+.login-footer{font-size:9px;color:#333;text-align:center;margin-top:12px;letter-spacing:.5px;text-transform:uppercase;}
 </style>
 
 <div id="login-screen">
   <div class="login-card">
     <div class="login-header">
-      <h1>Price Card Tool</h1>
-      <p>Authorized Personnel Only</p>
+      <h1>Quote Tool</h1>
+      
     </div>
     <div class="login-body">
       <div class="login-field">
-        <label>Username</label>
-        <input type="text" id="login-user" placeholder="Store # or DM" autocomplete="off" autocapitalize="none"/>
+        <label>UID</label>
+        <input type="text" id="login-uid" placeholder="Enter UID" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" onkeydown="if(event.key==='Enter')doLogin()"/>
       </div>
-      <div class="login-field">
-        <label>PIN</label>
-        <input type="password" id="login-pin" placeholder="••••••••" onkeydown="if(event.key==='Enter')doLogin()"/>
-      </div>
-      <div id="login-error">Incorrect username or PIN</div>
+      <div id="login-error">UID not recognized or access not granted</div>
       <button id="login-btn" onclick="doLogin()">Sign In</button>
       <div class="login-footer">Internal use only</div>
     </div>
@@ -334,34 +297,25 @@ select option,select optgroup{background:#1a1a1a}
 </div>
 
 <script>
-const USERS={
-  '747':'gsanchez',
-  '752':'ecruz',
-  '775':'mgomez',
-  '768':'jmanzo',
-  '777':'jsauceda',
-  '769':'rgarcia',
-  'DM':'jgarcia',
-  'dm':'jgarcia'
-};
+const ALLOWED_UIDS=[
+  'gs0426','ap485d','dg8674','mg221k','tg4507',
+  'jq6635','jv6394','jq286d','cx7250',
+  'ec934j','bb8326','jx820u','rg8855','ji2646'
+];
 
 function doLogin(){
-  const u=document.getElementById('login-user').value.trim();
-  const p=document.getElementById('login-pin').value.trim().toLowerCase();
+  const uid=document.getElementById('login-uid').value.trim().toLowerCase();
   const err=document.getElementById('login-error');
-  if(USERS[u]&&USERS[u]===p){
+  if(ALLOWED_UIDS.includes(uid)){
     document.getElementById('login-screen').style.display='none';
     document.body.style.overflow='';
-    sessionStorage.setItem('qtool-auth',u);
   } else {
     err.style.display='block';
-    document.getElementById('login-pin').value='';
-    document.getElementById('login-pin').focus();
+    document.getElementById('login-uid').select();
   }
 }
 
-// Auto-lock on load — always require login on refresh
-sessionStorage.removeItem('qtool-auth');
+// Always require login on every page load
 document.body.style.overflow='hidden';
 </script>
 
@@ -383,7 +337,7 @@ document.body.style.overflow='hidden';
   <div class="hlogo">
     <div><div class="htitle">Quote Tool</div><div class="hsub">Pricing effective 3/11/2026</div></div>
   </div>
-  <div class="hbadge" style="background:var(--s3);color:var(--t2);border:1px solid var(--bd)">Tool Updated 3/18/2026 8:30 PM</div>
+  <div class="hbadge" style="background:var(--s3);color:var(--t2);border:1px solid var(--bd)">Tool Updated 3/20/2026 1:44 PM</div>
 </header>
 <div class="wrap">
 <div id="left">
@@ -481,7 +435,7 @@ document.body.style.overflow='hidden';
       <div style="padding:10px 14px 6px;font-size:9px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;color:var(--warn)">⚓ Tablet Anchor for PPP</div>
       <div style="display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--bd)">
         <div class="wiz-tile" id="wiz-tab-a9"  onclick="setWiz('tab','taba9p')"  style="border-right:1px solid var(--bd)">Tab A9+<div style="font-size:9px;font-weight:400;color:var(--t3);margin-top:1px">$149.99 +$15/mo</div></div>
-        <div class="wiz-tile" style="opacity:.4;cursor:not-allowed;border-left:1px solid var(--bd)">Tab A11+<div style="font-size:9px;font-weight:400;color:var(--t3);margin-top:1px">Available 3/20</div></div>
+        <div class="wiz-tile" id="wiz-tab-a11" onclick="setWiz('tab','taba11p')">Tab A11+<div style="font-size:9px;font-weight:400;color:var(--t3);margin-top:1px">$199.99 +$15/mo</div></div>
       </div>
       <div style="padding:5px 14px 8px;font-size:9px;color:var(--t3)">Tablet anchors PPP. Voice lines use chosen device.</div>
     </div>
@@ -727,8 +681,7 @@ const PHONES=[
   {id:'s25fe',  n:'Galaxy S25 FE',         sw:149.99, nw:149.99,  up:649.99,  sw_o:399.99, nw_o:399.99, up_o:649.99,  frp:649.99,  brand:'Samsung',  promoReq:'supreme', maxLines:4},
   {id:'s25',    n:'Galaxy S25',            sw:360,    nw:360,     up:799.99,  sw_o:499.99, nw_o:499.99, up_o:799.99,  frp:799.99,  brand:'Samsung',  promoReq:'supreme'},
   {id:'s26',    n:'Galaxy S26',            sw:399.99, nw:499.99,  up:899.99,  sw_o:699.99, nw_o:699.99, up_o:899.99,  frp:899.99,  brand:'Samsung',  promoReq:'supreme', maxLines:4},
-  {id:'debs3',  n:'Debut S3',              sw:0,      nw:0,       up:79.99,   sw_o:0,      nw_o:0,      up_o:79.99,   frp:79.99,   brand:'Cricket',  promoReq:'select',  maxLinesNw:4},
-  {id:'s26u',   n:'Galaxy S26 Ultra ⚠ 3/20',  comingSoon:true, _name:'Galaxy S26 Ultra',      sw:1299.99,nw:1299.99, up:1299.99, frp:1299.99, brand:'Samsung',  promoReq:'any'},
+  {id:'s26u',   n:'Galaxy S26 Ultra',      sw:1299.99,nw:1299.99, up:1299.99, frp:1299.99, brand:'Samsung',  promoReq:'any'},
   // Motorola
   {id:'mgplay', n:'moto g play 2026',      sw:0,      nw:0,       up:119.99,  sw_o:29.99,  nw_o:29.99,  up_o:119.99,  frp:119.99,  brand:'Motorola', promoReq:'smart',   maxLinesNw:4},
   {id:'mg26',   n:'moto g 2026',           sw:0,      nw:0,       up:79.99,   sw_o:29.99,  nw_o:29.99,  up_o:79.99,   frp:149.99,  brand:'Motorola', promoReqSw:'smart', promoReqNw:'supreme', maxLinesNw:4},
@@ -739,6 +692,7 @@ const PHONES=[
   // Cricket
   {id:'icon',   n:'Icon 2026',             sw:0,      nw:0,       up:104.99,  sw_o:29.99,  nw_o:29.99,  up_o:104.99,  frp:104.99,  brand:'Cricket',  promoReq:'smart',   maxLinesNw:4},
   {id:'iconp',  n:'Icon Plus 2026',        sw:0,      nw:0,       up:69.99,   sw_o:29.99,  nw_o:29.99,  up_o:69.99,   frp:109.99,  brand:'Cricket',  promoReq:'smart',   maxLinesNw:4},
+  {id:'debs3',  n:'Debut S3',              sw:0,      nw:0,       up:79.99,   sw_o:0,      nw_o:0,      up_o:79.99,   frp:79.99,   brand:'Cricket',  promoReq:'select',  maxLinesNw:4},
   {id:'iconpr', n:'Icon Pro 2026',         sw:0,      nw:0,       up:124.99,  sw_o:29.99,  nw_o:29.99,  up_o:124.99,  frp:124.99,  brand:'Cricket',  promoReq:'smart',   maxLinesNw:4},
 ];
 
@@ -752,7 +706,7 @@ const WATCHES=[
 
 const TABLETS=[
   {id:'taba9p', n:'Galaxy Tab A9+',  price:149.99,frp:249.99},
-  {id:'taba11p',n:'Galaxy Tab A11+ ⚠ 3/20', comingSoon:true, _name:'Galaxy Tab A11+', price:199.99,frp:259.99},
+  {id:'taba11p',n:'Galaxy Tab A11+', price:199.99,frp:259.99},
 ];
 
 const HS_DEVICES=[
@@ -812,17 +766,9 @@ function meetsPromoReq(ph, linePos, lt){
   if(req==='select') return ['supreme','smart','select'].includes(p);
   return true;
 }
-// ── LAUNCH DATE FILTER ──
-// Set to null to show all. Set to a Date to hide comingSoon items until then.
-const LAUNCH_DATE = new Date('2026-03-20');
-const isLaunched = (item) => !item.comingSoon || new Date() >= LAUNCH_DATE;
-
 function visiblePhones(){
   if(activePlan()==='byod') return [];
-  return PHONES.filter(isLaunched);
-}
-function visibleTablets(){
-  return TABLETS.filter(isLaunched);
+  return PHONES;
 }
 function devPrice(dev, lt, linePos, upQual=true){
   if(!dev) return 0;
@@ -1071,7 +1017,7 @@ function buildCard(l,idx){
     if(l.byod){
       devHtml+=`<option value="byod_t" ${l.device==='byod_t'?'selected':''}>Customer's Own Tablet</option>`;
     } else {
-      visibleTablets().forEach(t=>{ 
+      TABLETS.forEach(t=>{ 
         const pr=l.lt==='upgrade'?t.frp:t.price;
         const tagT=l.lt==='upgrade'?' (FRP)':'';
         devHtml+=`<option value="${t.id}" ${l.device===t.id?'selected':''}>${t.n.replace(/^Samsung /,'')} — ${fmt(pr)}${tagT}</option>`;
@@ -1184,8 +1130,8 @@ function buildCard(l,idx){
       ${upQualRow}
       ${skeiSection}
       ${finRow}
+      <div class="f full" id="feats-${l.id}">${buildFeats(l)}</div>
     </div>
-    <div id="feats-${l.id}">${buildFeats(l)}</div>
   </div>`;
 }
 
@@ -1650,13 +1596,8 @@ function renderSummary(c){
       } else {
         const dev=devById(l.device,'w');
         if(!dev){ moRows+=`<div class="sr"><span class="sl">Watch plan — no device selected</span><span class="sv">${fmt(WATCH_PLAN)}</span></div>`; return; }
-        if(dev.credit&&dev.creditMo){
-          const netPlan=Math.max(0,WATCH_PLAN-dev.credit);
-          moRows+=`<div class="sr"><span class="sl">Watch plan — ${dev.n}</span><span class="sv">${fmt(WATCH_PLAN)}</span></div>`;
-          moRows+=`<div class="sr"><span class="sl" style="color:var(--g)">Watch credit × ${dev.creditMo} mo</span><span class="sv g">−$${dev.credit}.00/mo</span></div>`;
-        } else {
-          moRows+=`<div class="sr"><span class="sl">Watch plan — ${dev.n}</span><span class="sv">${fmt(WATCH_PLAN)}</span></div>`;
-        }
+        const creditNote=dev.credit?` <span style="color:var(--g);font-size:9px">($${dev.credit}/mo credit ×${dev.creditMo} mo)</span>`:'';
+        moRows+=`<div class="sr"><span class="sl">Watch plan — ${dev.n}${creditNote}</span><span class="sv">${fmt(WATCH_PLAN)}</span></div>`;
       }
     });
   }
@@ -1710,38 +1651,32 @@ function renderSummary(c){
     }
   }
 
-  // Helper: collapsible summary card
-  const collCard=(id,title,total,totalLabel,rows,extra,color)=>`
-    <div class="scard" style="overflow:hidden">
-      <div onclick="document.getElementById('${id}-body').style.display=document.getElementById('${id}-body').style.display==='none'?'block':'none';this.querySelector('.schev').style.transform=document.getElementById('${id}-body').style.display==='none'?'rotate(0)':'rotate(180deg)'"
-        style="padding:10px 14px;cursor:pointer;user-select:none;display:flex;align-items:center;justify-content:space-between;background:var(--s2)">
-        <div>
-          <div style="font-size:9px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;color:var(--t3);margin-bottom:3px">${title}</div>
-          <div style="font-family:'Bebas Neue';font-size:28px;color:${color||'var(--t1)'};line-height:1">${total}</div>
-        </div>
-        <span class="schev" style="color:var(--t3);font-size:12px;transition:transform .2s">▼</span>
-      </div>
-      <div id="${id}-body" style="display:none;padding:12px 14px;border-top:1px solid var(--bd)">
-        ${rows}
-        <hr class="sdiv">
-        <div class="stot"><div class="stl">${totalLabel}</div><div class="stv" style="color:${color||'var(--t1)'}">${total}</div></div>
-        ${extra||''}
-      </div>
-    </div>`;
-
+  const passportHtml='';
   el.innerHTML=`
-    ${collCard('otd','Out the Door Today',fmt(c.otdTotal),'Due Today',
-      otdRows||'<div class="sr"><span class="sl" style="color:var(--t3)">No charges yet</span></div>',
-      swNote,'var(--g)')}
+    <div class="scard">
+      <div class="scard-head"><div class="stitle">Out the Door Today</div></div>
+      <div class="sbody">
+        ${otdRows||'<div class="sr"><span class="sl" style="color:var(--t3)">No charges yet</span></div>'}
+        <hr class="sdiv">
+        <div class="stot"><div class="stl">Due Today</div><div class="stv">${fmt(c.otdTotal)}</div></div>
+        ${swNote}
+      </div>
+    </div>
 
-    ${collCard('mo',S.acct==='aal'?'Added to Monthly Bill':'Est. Monthly Recurring',fmt(c.planMoTotal),
-      S.acct==='aal'?'Bill Increase':'Plan + Features',
-      moRows||'<div class="sr"><span class="sl" style="color:var(--t3)">No monthly charges yet</span></div>',
-      '','var(--t1)')}
+    <div class="scard">
+      <div class="scard-head"><div class="stitle">${S.acct==='aal'?'Added to Monthly Bill':'Est. Monthly Recurring'}</div></div>
+      <div class="sbody">
+        ${moRows||'<div class="sr"><span class="sl" style="color:var(--t3)">No monthly charges yet</span></div>'}
+        <hr class="sdiv">
+        <div class="stot"><div class="stl">${S.acct==='aal'?'Bill Increase':'Plan + Features'}</div><div class="stv">${fmt(c.planMoTotal)}</div></div>
+      </div>
+    </div>
 
-    ${S.finOn&&c.hasQual?collCard('ppp','Phone Payment Plan',
-      S.finType==='prog'?'$'+c.progPayment.toFixed(2)+{weekly:'/wk',biweekly:'/2wk',monthly:'/mo'}[S.progFreq]:fmtMo(c.breadMo),
-      'PPP Payment',pppHtml,'','var(--prog)'):''}
+    ${S.finOn&&c.hasQual?`<div class="scard">
+      <div class="scard-head"><div class="stitle">Phone Payment Plan</div></div>
+      <div class="sbody">${pppHtml}</div>
+    </div>`:''}
+
 
     <div class="tm-card">
       <div class="tm-lbl">${S.acct==='aal'?'Est. Total Added to Bill':'Est. Total Monthly'}</div>
@@ -1750,13 +1685,628 @@ function renderSummary(c){
     </div>
 
     <button class="reset-btn" onclick="resetAll()">↺ Reset Calculator</button>
-    <button onclick="showDMCard()" style="width:100%;padding:10px;margin-top:6px;background:linear-gradient(135deg,#00a94f,#00c85f);border:none;border-radius:var(--r2);color:#000;font-family:'DM Sans';font-size:11px;font-weight:900;letter-spacing:.5px;text-transform:uppercase;cursor:pointer">📲 Generate DM Card</button>
+    <button onclick="document.getElementById('rsm-overlay').style.display='flex'" style="width:100%;padding:10px;margin-top:6px;background:linear-gradient(135deg,#00a94f,#00c85f);border:none;border-radius:var(--r2);color:#000;font-family:'DM Sans';font-size:11px;font-weight:900;letter-spacing:.5px;text-transform:uppercase;cursor:pointer">📲 Generate Price Card</button>
     ${renderPayout(c)}`;
 }
 
 // ============================================================
-// PAYOUT
+// DEAL STRIP
 // ============================================================
+let _lowestSelDeal=null;
+let _dealLt={i13:'switcher',i16e:'switcher',sel:'switcher'};
+let _dealSelAp=true;
+
+function toggleDealLt(card){
+  _dealLt[card]=_dealLt[card]==='switcher'?'new':'switcher';
+  renderDealStrip();
+}
+function toggleDealSelAp(){
+  _dealSelAp=!_dealSelAp;
+  renderDealStrip();
+}
+function renderDealStrip(){
+  // --- Card 1: Icon Plus — lowest Android upgrade, just act + tax ---
+  const iconPlus=PHONES.find(p=>p.id==='iconp');
+  const ip_device=iconPlus.up; // $69.99 qualified upgrade
+  const ip_act=ACT_FEE; // $25
+  const ip_taxable=ip_device+ip_act;
+  const ip_otd=ip_taxable+ip_taxable*TAX;
+
+  // --- Card 2: iPhone 13 128GB ---
+  const i13=PHONES.find(p=>p.id==='i13_128');
+  const supremePlan=PLANS.find(p=>p.id==='supreme');
+  const i13_lt=_dealLt.i13;
+  const i13_sw=i13_lt==='switcher';
+  const i13_device=i13_sw?i13.sw:i13.nw;
+  const i13_plan=supremePlan.lines[0];
+  const i13_apo=50;
+  const i13_act=i13_sw?0:ACT_FEE;
+  const i13_sim=0;
+  const i13_protect=12;
+  const i13_taxable=i13_device+i13_apo+i13_act+i13_sim;
+  const i13_otd=i13_device+i13_plan+i13_apo+i13_act+i13_sim+i13_protect+i13_taxable*TAX;
+
+  // --- Card 3: iPhone 16e 128GB ---
+  const i16e=PHONES.find(p=>p.id==='i16e_128');
+  const i16e_lt=_dealLt.i16e;
+  const i16e_sw=i16e_lt==='switcher';
+  const i16e_device=i16e_sw?i16e.sw:i16e.nw;
+  const i16e_plan=supremePlan.lines[0];
+  const i16e_apo=75;
+  const i16e_act=i16e_sw?0:ACT_FEE;
+  const i16e_sim=0;
+  const i16e_protect=12;
+  const i16e_taxable=i16e_device+i16e_apo+i16e_act+i16e_sim;
+  const i16e_otd=i16e_device+i16e_plan+i16e_apo+i16e_act+i16e_sim+i16e_protect+i16e_taxable*TAX;
+
+  // --- Card 4: Lowest Select UNL ---
+  // On Select plan, only promoReq:'any' meets promo. Smart/Supreme req = other plan price.
+  const sel_lt=_dealLt.sel;
+  const sel_sw=sel_lt==='switcher';
+  // Specific device per scenario:
+  // SW + AutoPay ON  → moto g play (Samsung/Moto, $29.99 sw_o on Select)
+  // SW + AutoPay OFF → Icon Plus   ($29.99 sw_o on Select)
+  // NEW + AutoPay ON → moto g play ($29.99 nw_o on Select)
+  // NEW + AutoPay OFF→ Icon 2026   ($29.99 nw_o on Select)
+  const selDevId = 'debs3';
+  const selDev=PHONES.find(p=>p.id===selDevId);
+  // On Select, these devices req min Smart → use other plan price
+  const sel_device=sel_sw?(selDev.sw_o??selDev.sw):(selDev.nw_o??selDev.nw);
+  _lowestSelDeal={p:selDev, price:sel_device};
+  const sel_plan=PLANS.find(p=>p.id==='select').lines[0]; // $40
+  const sel_act=sel_sw?0:ACT_FEE;
+  const sel_sim=0;
+  const sel_apo=sel_sw?25:0; // $25 min acc bundle for SW
+  const sel_protect=8;
+  const sel_taxable=sel_device+sel_act+sel_sim+sel_apo;
+  const sel_otd=sel_device+sel_plan+sel_act+sel_sim+sel_apo+sel_protect+sel_taxable*TAX;
+  const sel_name=selDev.n.replace(/^(Apple |Samsung |Motorola |motorola |Cricket )/i,'');
+
+  const ltToggle=(card,lt)=>`<div onclick="event.stopPropagation();toggleDealLt('${card}')" style="display:inline-flex;gap:0;border:1px solid var(--bd2);border-radius:20px;overflow:hidden;margin-bottom:6px;cursor:pointer">
+    <span style="padding:2px 8px;font-size:9px;font-weight:800;background:${lt==='switcher'?'var(--warn)':'transparent'};color:${lt==='switcher'?'#000':'var(--t3)'}">SW</span>
+    <span style="padding:2px 8px;font-size:9px;font-weight:800;background:${lt==='new'?'var(--g)':'transparent'};color:${lt==='new'?'#000':'var(--t3)'}">NEW</span>
+  </div>`;
+
+  $('deal-strip').innerHTML=`
+    <div class="deal-card android" onclick="launchDeal('iconplus-up')">
+      <div class="deal-tag">📱 Android Upgrade</div>
+      <div class="deal-name">Icon Plus 2026</div>
+      <div class="deal-price">${fmt(Math.round(ip_otd*100)/100)}</div>
+      <div class="deal-sub">$${ip_device} + $25 act + tax</div>
+    </div>
+    <div class="deal-card select" onclick="launchDeal('i13')">
+      <div class="deal-tag">📱 iPhone 13</div>
+      ${ltToggle('i13',i13_lt)}
+      <div class="deal-price">${fmt(Math.round(i13_otd*100)/100)}</div>
+      <div class="deal-sub">${i13_sw?'FREE':'$49.99'} · Supreme · $50 acc · Protect</div>
+    </div>
+    <div class="deal-card iphone" onclick="launchDeal('i16e')">
+      <div class="deal-tag">📱 iPhone 16e</div>
+      ${ltToggle('i16e',i16e_lt)}
+      <div class="deal-price">${fmt(Math.round(i16e_otd*100)/100)}</div>
+      <div class="deal-sub">${i16e_sw?'FREE':'$99.99'} · Supreme · $75 acc · Protect</div>
+    </div>
+    <div class="deal-card android" onclick="launchDeal('select')">
+      <div class="deal-tag" style="color:var(--warn)">⭐ Select UNL</div>
+      <div style="display:flex;align-items:center;gap:5px;margin-bottom:4px">
+        ${ltToggle('sel',sel_lt)}
+        <span onclick="event.stopPropagation();toggleDealSelAp()" style="display:inline-flex;align-items:center;gap:4px;padding:2px 7px;border:1px solid var(--bd2);border-radius:6px;cursor:pointer;font-size:9px;font-weight:800;color:${_dealSelAp?'var(--g)':'var(--t3)'}">
+          ABP <span style="width:16px;height:9px;background:${_dealSelAp?'var(--g)':'var(--bd2)'};border-radius:20px;position:relative;display:inline-block"><span style="position:absolute;width:5px;height:5px;background:#fff;border-radius:50%;top:2px;left:${_dealSelAp?'9px':'2px'}"></span></span>
+        </span>
+      </div>
+      <div class="deal-price" style="color:var(--warn)">${fmt(Math.round(sel_otd*100)/100)}</div>
+      <div class="deal-sub">${sel_name} · $40 Select${sel_sw?' · $25 acc':''} · Protect</div>
+    </div>`;
+}
+
+function launchDeal(type){
+  resetAll();
+  if(type==='iconplus-up'){
+    setAcct('aal');
+    setTxnType('upgrade');
+    addLine('v');
+    const l=S.lines[0]; l.lt='upgrade'; l.device='iconp'; l.upQual=true;
+  } else if(type==='i13'){
+    setPlan('supreme');
+    S.apoPerDevice=50; $('apo-inp').value=50; updateApoTiles(50);
+    addLine('v');
+    const l=S.lines[0]; l.lt=_dealLt.i13; l.device='i13_128'; l.protect=true; l.protectTier=12;
+  } else if(type==='i16e'){
+    setPlan('supreme');
+    S.apoPerDevice=75; $('apo-inp').value=75; updateApoTiles(75);
+    addLine('v');
+    const l=S.lines[0]; l.lt=_dealLt.i16e; l.device='i16e_128'; l.protect=true; l.protectTier=12;
+  } else if(type==='select'){
+    setPlan('select');
+    S.ap=_dealSelAp;
+    addLine('v');
+    const l=S.lines[0]; l.lt=_dealLt.sel; l.device=_lowestSelDeal?_lowestSelDeal.p.id:''; l.protect=true; l.protectTier=8;
+    renderPlanGrid();
+  }
+  // Re-render lines so device dropdown shows selected value
+  renderLines();
+  update();
+  document.getElementById('lines-container').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+// ============================================================
+// ============================================================
+// ============================================================
+// WIZARD
+// ============================================================
+const WIZ_IPHONES=['i16e_128','i13_128'];
+const WIZ_IPHONES_SW=['i16e_128','i13_128']; // SW: 16e first
+const WIZ_IPHONES_NW=['i13_128','i16e_128']; // NEW: 13 first
+const WIZ_ANDROID=['s25','medge','mgsty']; // s25=anchor, edge/stylus=fill
+
+let W={ppp:null,ppptype:null,approval:0,lines:null,brand:null,lt:null,tab:null,anchortype:null};
+
+function toggleWizard(){
+  const body=$('wizard-body'),chev=$('wizard-chevron');
+  const open=body.style.display==='none';
+  body.style.display=open?'block':'none';
+  chev.style.transform=open?'rotate(180deg)':'rotate(0deg)';
+}
+
+function wizPPPType(){return W.ppptype==='prog'?'prog':(W.ppptype?'bread':null);}
+function wizAPR(){return W.ppptype==='bread14'?14.99:0;}
+
+function setWiz(key,val){
+  W[key]=val;
+  const hi=(id,on)=>{const el=$(id);if(el)el.classList.toggle('on',on);};
+  if(key==='ppp'){
+    hi('wiz-ppp-yes',val===true);hi('wiz-ppp-no',val===false);
+    $('wiz-ppptype-row').style.display=val?'block':'none';
+    $('wiz-approval-row').style.display=val?'block':'none';
+    if(!val){W.ppptype=null;W.approval=0;W.tab=null;}
+  }
+  if(key==='ppptype'||key==='pa'){
+    W.ppptype=val; // always store in ppptype
+    hi('wiz-pt-prog',val==='prog');hi('wiz-pt-bread0',val==='bread0');hi('wiz-pt-bread14',val==='bread14');
+    updateWizApprovalHint();
+  }
+  if(key==='approval') updateWizApprovalHint();
+  if(key==='lines'){[1,2,3,4,5].forEach(n=>hi('wiz-lines-'+n,n===val));W.tab=null;}
+  if(key==='brand'){hi('wiz-brand-iphone',val==='iphone');hi('wiz-brand-android',val==='android');hi('wiz-brand-mix',val==='mix');W.tab=null;}
+  if(key==='lt'){hi('wiz-lt-sw',val==='sw');hi('wiz-lt-new',val==='new');W.tab=null;}
+  if(key==='anchortype'){
+    const hi2=(id,on)=>{const el=$(id);if(el)el.classList.toggle('on',on);};
+    hi2('wiz-at-device',val==='device'); hi2('wiz-at-tablet',val==='tablet');
+    W.tab=null; hi2('wiz-tab-a9',false); hi2('wiz-tab-a11',false);
+  }
+  if(key==='tab'){hi('wiz-tab-a9',val==='taba9p');hi('wiz-tab-a11',val==='taba11p');}
+  // Reset anchortype when key inputs change
+  if(['ppp','lines','brand','lt','ppptype'].includes(key)){W.anchortype=null;W.tab=null;}
+  refreshWizTabRow();
+  buildWizResult();
+}
+
+function updateWizApprovalHint(){
+  const hint=$('wiz-approval-hint');if(!hint||!W.ppptype||W.approval<=0)return;
+  if(W.ppptype==='prog') hint.textContent='Pre-tax budget';
+  else hint.textContent='Incl. tax'+(W.ppptype==='bread14'?' +14.99% APR':'');
+}
+
+function wizLineBudget(){
+  if(!W.ppp||!W.ppptype||W.approval<=0||!W.lines) return Infinity;
+  if(W.ppptype==='prog') return W.approval/W.lines;
+  return (W.approval/(1+TAX))/W.lines;
+}
+
+function wizPickBest(list,lt,ppp,lineBudget,apo){
+  const lineCount=W.lines||1;
+
+  if(!ppp){
+    // Cash OTD: pick first device, handle over-limit positionally
+    for(const id of list){
+      const p=PHONES.find(ph=>ph.id===id);if(!p) continue;
+      const promoPrice=lt==='sw'?p.sw:p.nw;
+      const otherPrice=lt==='sw'?(p.sw_o??promoPrice):(p.nw_o??promoPrice);
+      const maxL=lt==='new'?(p.maxLinesNw||p.maxLines):p.maxLines;
+      return {id,p,price:promoPrice,otherPrice,maxL,fillId:null,fillPrice:null};
+    }
+    return null;
+  }
+
+  // PPP mode: anchor on line 1 (≥$149.99), cheapest device fills rest
+  for(const anchorId of list){
+    const a=PHONES.find(ph=>ph.id===anchorId);if(!a) continue;
+    const anchorPrice=lt==='sw'?a.sw:a.nw;
+    if(anchorPrice<149.99) continue;
+    const anchorMaxL=lt==='new'?(a.maxLinesNw||a.maxLines):a.maxLines;
+
+    // Find cheapest fill device for remaining lines
+    let fillDev=null,fillPrice=Infinity,fillMaxL=null;
+    for(const fillId of list){
+      const f=PHONES.find(ph=>ph.id===fillId);if(!f) continue;
+      const fp=lt==='sw'?f.sw:f.nw;
+      const fMaxL=lt==='new'?(f.maxLinesNw||f.maxLines):f.maxLines;
+      if(fMaxL&&fMaxL<lineCount-1) continue; // must cover remaining lines
+      if(fp<fillPrice){fillPrice=fp;fillDev=f;fillMaxL=fMaxL;}
+    }
+    if(!fillDev){fillDev=a;fillPrice=anchorPrice;fillMaxL=anchorMaxL;}
+
+    // Budget check: 1×anchor + (lineCount-1)×fill + all apo ≤ approval
+    if(W.approval>0){
+      const cap=W.approval/(W.ppptype==='bread'?(1+TAX):1);
+      if(anchorPrice+(lineCount-1)*fillPrice+apo*lineCount>cap) continue;
+    }
+
+    return {id:anchorId,p:a,price:anchorPrice,otherPrice:anchorPrice,maxL:anchorMaxL,
+            fillId:fillDev.id,fillDev,fillPrice,fillMaxL};
+  }
+  return null;
+}
+
+function wizCanQualifyPPP(brand,lt){
+  // Check if a valid PPP deal can be built without a tablet anchor
+  // For mixed-device scenarios: 1 anchor line + remaining cheap lines must fit budget
+  const cap=W.approval>0?W.approval/(W.ppptype==='bread'?(1+TAX):1):Infinity;
+  const apo=brand==='iphone'?(lt==='sw'?75:50):45;
+  const list=brand==='iphone'?(lt==='sw'?WIZ_IPHONES_SW:WIZ_IPHONES_NW):WIZ_ANDROID;
+  const cheapList=brand==='iphone'?(lt==='sw'?WIZ_IPHONES_SW:WIZ_IPHONES_NW):WIZ_ANDROID;
+
+  // Try each device as anchor on line 1, cheapest qualifying device on remaining lines
+  for(const anchorId of list){
+    const a=PHONES.find(p=>p.id===anchorId);if(!a) continue;
+    const ap=lt==='sw'?a.sw:a.nw;
+    if(ap<149.99) continue; // anchor must be ≥$149.99
+    // Find cheapest device for remaining lines (can be same or cheaper)
+    let cheapPrice=ap;
+    for(const cid of cheapList){
+      const c=PHONES.find(p=>p.id===cid);if(!c) continue;
+      const cp=lt==='sw'?c.sw:c.nw;
+      const maxL=lt==='new'?(c.maxLinesNw||c.maxLines):c.maxLines;
+      if(maxL&&maxL<W.lines-1) continue; // can't cover remaining lines
+      cheapPrice=cp; break;
+    }
+    const totalNeeded=ap+cheapPrice*(W.lines-1)+apo*W.lines;
+    if(cap===Infinity||totalNeeded<=cap) return true;
+  }
+  // Also check positional (e.g. 5× same device where line 5 hits $149.99)
+  for(const id of list){
+    const p=PHONES.find(ph=>ph.id===id);if(!p) continue;
+    const price=lt==='sw'?p.sw:p.nw;
+    const otherPrice=lt==='sw'?(p.sw_o??price):(p.nw_o??price);
+    const maxL=lt==='new'?(p.maxLinesNw||p.maxLines):p.maxLines;
+    if(maxL&&W.lines>maxL&&otherPrice>=149.99){
+      let tot=0;
+      for(let i=1;i<=W.lines;i++) tot+=(i>maxL?otherPrice:price)+apo;
+      if(cap===Infinity||tot<=cap) return true;
+    }
+  }
+  return false;
+}
+
+function refreshWizTabRow(){
+  const row=$('wiz-tab-row');
+  const atRow=$('wiz-anchortype-row');
+  if(!row||!atRow) return;
+  if(!W.ppp||!W.ppptype||!W.lines||!W.brand||!W.lt){
+    row.style.display='none'; atRow.style.display='none'; return;
+  }
+  const apo=W.brand==='iphone'?(W.lt==='sw'?75:50):45;
+  const lb=wizLineBudget();
+
+  // Check if Android/Mix has a qualifying device anchor
+  const andSelf=wizPickBest(WIZ_ANDROID,W.lt,true,lb,apo);
+  const iphList=W.lt==='sw'?WIZ_IPHONES_SW:WIZ_IPHONES_NW;
+  const iphSelf=wizPickBest(iphList,W.lt,true,lb,apo);
+
+  const isIphonePPP=(W.brand==='iphone');
+  const androidCanSelfQual=(W.brand==='android'||W.brand==='mix')&&!!andSelf;
+
+  if(androidCanSelfQual&&!isIphonePPP){
+    // Show anchor type question: device vs tablet
+    atRow.style.display='block';
+    if(W.anchortype==='tablet'){
+      // Show tablet picker
+      row.style.display='block';
+    } else {
+      row.style.display='none';
+      if(W.anchortype==='device') W.tab=null;
+    }
+  } else {
+    // iPhone PPP or no self-qualifying device — go straight to tablet picker
+    atRow.style.display='none';
+    W.anchortype=null;
+    const needsTab=isIphonePPP?!iphSelf:(!andSelf&&!iphSelf);
+    row.style.display=needsTab?'block':'none';
+    if(!needsTab) W.tab=null;
+  }
+}
+
+function buildWizResult(){
+  const el=$('wiz-result');
+  if(W.ppp===null||W.lines===null||W.brand===null||W.lt===null){el.style.display='none';return;}
+  if(W.ppp&&!W.ppptype){el.style.display='none';return;}
+  if(W.ppp&&W.approval<=0&&!W.tab){el.style.display='none';return;}
+  // For android/mix PPP: need anchortype decision before proceeding
+  const atRowVis=$('wiz-anchortype-row')&&$('wiz-anchortype-row').style.display==='block';
+  if(atRowVis&&!W.anchortype){el.style.display='none';return;}
+  const tabRowVisible=$('wiz-tab-row')&&$('wiz-tab-row').style.display==='block';
+  if(tabRowVisible&&!W.tab){el.style.display='none';return;}
+
+  const {lines,brand,lt,ppp,tab,anchortype}=W;
+  const ppptype=wizPPPType(),apr=wizAPR();
+  const apo=brand==='iphone'?(lt==='sw'?75:50):45;
+  const lb=wizLineBudget();
+  const plan=PLANS.find(p=>p.id==='supreme');
+  const planCost=plan.lines[lines-1];
+
+  let voiceLines=[],tabAnchor=null;
+
+  // Helper: build per-line price array respecting maxLines (over-limit uses other price)
+  function buildLineArr(res, cnt){
+    if(!res) return [];
+    const arr=[];
+    for(let i=0;i<cnt;i++){
+      const overLimit=res.maxL&&(i+1)>res.maxL;
+      arr.push({id:res.id,price:overLimit?res.otherPrice:res.price,n:res.p.n,overLimit});
+    }
+    return arr;
+  }
+
+  if(brand==='iphone'){
+    const self=ppp?wizPickBest(lt==='sw'?WIZ_IPHONES_SW:WIZ_IPHONES_NW,lt,true,lb,apo):wizPickBest(lt==='sw'?WIZ_IPHONES_SW:WIZ_IPHONES_NW,lt,false,Infinity,apo);
+    if(self){
+      voiceLines=buildLineArr(self,lines);
+    } else if(tab){
+      const primId=lt==='sw'?'i16e_128':'i13_128'; // SW→16e, NEW→13
+      const prim=PHONES.find(p=>p.id===primId);
+      const pp=lt==='sw'?prim.sw:prim.nw;
+      const maxL2=lt==='new'?(prim.maxLinesNw||prim.maxLines):prim.maxLines;
+      for(let i=0;i<lines;i++){
+        const ov=maxL2&&(i+1)>maxL2;
+        voiceLines.push({id:primId,price:ov?(lt==='sw'?(prim.sw_o??pp):(prim.nw_o??pp)):pp,n:prim.n,overLimit:ov});
+      }
+      tabAnchor=TABLETS.find(t=>t.id===tab);
+    } else {el.style.display='none';return;}
+  } else if(brand==='android'){
+    const useTabAnchor=anchortype==='tablet'||(!anchortype&&tab);
+    const self=ppp&&!useTabAnchor?wizPickBest(WIZ_ANDROID,lt,true,lb,apo):wizPickBest(WIZ_ANDROID,lt,false,Infinity,apo);
+    if(self&&!useTabAnchor){
+      if(ppp&&lines>1&&self.fillId&&self.fillId!==self.id){
+        voiceLines.push({id:self.id,price:self.price,n:self.p.n,anchor:true});
+        for(let i=1;i<lines;i++){
+          const fMaxL=self.fillMaxL;
+          const ov=fMaxL&&i>=fMaxL;
+          const fp=ov?(lt==='sw'?(self.fillDev.sw_o??self.fillPrice):(self.fillDev.nw_o??self.fillPrice)):self.fillPrice;
+          voiceLines.push({id:self.fillId,price:fp,n:self.fillDev.n,overLimit:ov});
+        }
+      } else {
+        voiceLines=buildLineArr(self,lines);
+      }
+    } else if(useTabAnchor||tab){
+      // Tablet anchors PPP — voice lines use cheapest qualifying device
+      // Pick cheapest from end of list for variety, must cover all lines
+      const tabFillCandidates=[...WIZ_ANDROID].reverse(); // cheapest first (mgsty, medge, s25)
+      let fillId=null,fillDev=null,fillPr=0,fillMaxL=null;
+      for(const fid of tabFillCandidates){
+        const f=PHONES.find(p=>p.id===fid);if(!f) continue;
+        const fp=lt==='sw'?f.sw:f.nw;
+        const fml=lt==='new'?(f.maxLinesNw||f.maxLines):f.maxLines;
+        // Must cover at least 1 line at promo price
+        fillId=fid; fillDev=f; fillPr=fp; fillMaxL=fml; break;
+      }
+      if(!fillDev){fillId=WIZ_ANDROID[WIZ_ANDROID.length-1];fillDev=PHONES.find(p=>p.id===fillId);fillPr=lt==='sw'?fillDev.sw:fillDev.nw;}
+      for(let i=0;i<lines;i++){
+        const ov=fillMaxL&&(i+1)>fillMaxL;
+        const fp2=ov?(lt==='sw'?(fillDev.sw_o??fillPr):(fillDev.nw_o??fillPr)):fillPr;
+        voiceLines.push({id:fillId,price:fp2,n:fillDev.n,overLimit:ov});
+      }
+      tabAnchor=TABLETS.find(t=>t.id===tab);
+    } else if(tab){
+      const primId=WIZ_ANDROID[WIZ_ANDROID.length-1];
+      const prim=PHONES.find(p=>p.id===primId);
+      const pp=lt==='sw'?prim.sw:prim.nw;
+      const maxL2=lt==='new'?(prim.maxLinesNw||prim.maxLines):prim.maxLines;
+      for(let i=0;i<lines;i++){
+        const ov=maxL2&&(i+1)>maxL2;
+        voiceLines.push({id:primId,price:ov?(lt==='sw'?(prim.sw_o??pp):(prim.nw_o??pp)):pp,n:prim.n,overLimit:ov});
+      }
+      tabAnchor=TABLETS.find(t=>t.id===tab);
+    } else {el.style.display='none';return;}
+  } else {
+    const half=Math.ceil(lines/2),rest=lines-half;
+    const id1=lt==='sw'?'i16e_128':'i13_128',p1=PHONES.find(p=>p.id===id1); // SW→16e, NEW→13
+    const maxL1=lt==='new'?(p1.maxLinesNw||p1.maxLines):p1.maxLines;
+    const pr1=lt==='sw'?p1.sw:p1.nw;
+    const ad=PHONES.find(p=>p.id==='s25')||PHONES.find(p=>p.id==='medge');
+    const pr2=lt==='sw'?ad.sw:ad.nw;
+    for(let i=0;i<half;i++){const ov=maxL1&&(i+1)>maxL1;voiceLines.push({id:id1,price:ov?(lt==='sw'?(p1.sw_o??pr1):(p1.nw_o??pr1)):pr1,n:p1.n,overLimit:ov});}
+    for(let i=0;i<rest;i++) voiceLines.push({id:ad.id,price:pr2,n:ad.n});
+    if(ppp&&tab) tabAnchor=TABLETS.find(t=>t.id===tab);
+  }
+
+  const actFee=lt==='sw'?0:ACT_FEE;
+  const totalDev=voiceLines.reduce((s,l)=>s+l.price,0);
+  const tabPrice=tabAnchor?tabAnchor.price:0;
+  const tabPlan=tabAnchor?TABLET_PLAN:0;
+  const finBase=totalDev+tabPrice+apo*lines;
+  const totalLines=lines+(tabAnchor?1:0);
+  // Budget warning
+  if(ppp&&W.approval>0){
+    const cap=W.approval/(ppptype==='bread'?(1+TAX):1);
+    if(finBase>cap){
+      el.style.display='block';
+      el.innerHTML=`<div style="padding:10px 12px;background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.15);border-radius:var(--r2);font-size:10px;color:var(--err)">⚠ Total devices+acc ${fmt(finBase)} exceeds ${fmt(cap)} approval. Try fewer lines or a lower-cost device.</div>`;
+      return;
+    }
+  }
+  const iphLines=voiceLines.filter(l=>WIZ_IPHONES.includes(l.id));
+  const andQLines=voiceLines.filter(l=>WIZ_ANDROID.includes(l.id)&&l.price>=149.99);
+  const protCost=iphLines.length*12+andQLines.length*8;
+
+  let pppOTD=0,pppMoLine='',pppNote='';
+  if(ppp){
+    if(ppptype==='prog'){
+      const tot=finBase*(1+PROG_FEE);
+      pppOTD=PROG_INIT;
+      pppMoLine='Progressive: '+fmt(Math.floor(tot/3*100)/100)+'/mo × 3 (total '+fmt(tot)+')';
+      pppNote='$1 today · 18.25% · '+fmt(finBase)+' financed';
+    } else {
+      const bt=finBase*(1+TAX);
+      const r=apr>0?apr/100/12:0;
+      const bmo=apr===0?bt/24:bt*r*Math.pow(1+r,24)/(Math.pow(1+r,24)-1);
+      pppOTD=0;
+      pppMoLine='Bread: '+fmt(bmo)+'/mo × 24 ('+apr+'% APR)';
+      pppNote='$0 down · '+fmt(bt)+' incl. tax';
+    }
+  }
+
+  const taxable=(ppp?0:finBase)+actFee*lines;
+  const otd=planCost+(ppp?pppOTD:finBase)+actFee*lines+protCost+taxable*TAX;
+  const monthly=planCost+tabPlan+protCost;
+
+  const dc={};
+  voiceLines.forEach(l=>{
+    const k=l.id;
+    dc[k]=dc[k]||{n:l.n.replace(/^(Apple |Samsung |Motorola |motorola )/i,''),c:0};
+    dc[k].c++;
+  });
+  const devStr=Object.values(dc).map(d=>(d.c>1?d.c+'× ':'')+d.n).join(' + ');
+  const fullStr=devStr+(tabAnchor?' + '+tabAnchor.n.replace(/^Samsung /,'')+'(anchor)':'');
+
+  el.style.display='block';
+  el.innerHTML=`
+    <div style="background:var(--s2);border:1px solid rgba(0,169,79,.2);border-radius:var(--r2);overflow:hidden">
+      <div style="background:rgba(0,169,79,.08);padding:10px 14px;border-bottom:1px solid rgba(0,169,79,.15)">
+        <div style="font-size:8px;font-weight:900;letter-spacing:2px;text-transform:uppercase;color:var(--g);margin-bottom:2px">Best Deal — ${totalLines} Line${totalLines>1?'s':''}</div>
+        <div style="font-family:'Bebas Neue';font-size:14px;color:var(--t1);letter-spacing:.3px;line-height:1.3">Supreme · ${fullStr}</div>
+      </div>
+      <div style="padding:12px 14px;display:grid;grid-template-columns:1fr 1fr;gap:10px">
+        <div>
+          <div style="font-size:8px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:var(--t3);margin-bottom:4px">OTD Today</div>
+          <div style="font-family:'Bebas Neue';font-size:30px;color:var(--g);line-height:1">${fmt(Math.round(otd*100)/100)}</div>
+          <div style="font-size:9px;color:var(--t3);margin-top:4px;line-height:1.7">
+            ${voiceLines.map((l,i)=>{const dn=l.n.replace(/^(Apple |Samsung |Motorola |motorola |Cricket )/i,'');return 'Line '+(i+1)+': '+dn+' '+(l.price===0?'FREE':'$'+l.price)+(l.anchor?' <span style="color:var(--ok);font-size:8px">(anchor)</span>':(l.overLimit?' <span style="color:var(--warn);font-size:8px">(other plan)</span>':''));}).join('<br>')}
+            ${tabAnchor?'<br>'+tabAnchor.n.replace(/^Samsung /,'')+': $'+tabPrice+' +$'+TABLET_PLAN+'/mo':''}<br>
+            $${apo} acc ×${lines}<br>
+            ${lt==='sw'?'Act waived (promo)':fmt(actFee)+' act ×'+lines}<br>
+            ${protCost>0?'Protect: $'+protCost+'/mo<br>':''}
+            ${ppp?'<span style="color:var(--prog)">'+pppNote+'</span>':'Cash OTD + tax'}
+          </div>
+        </div>
+        <div>
+          <div style="font-size:8px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:var(--t3);margin-bottom:4px">Monthly</div>
+          <div style="font-family:'Bebas Neue';font-size:30px;color:var(--t1);line-height:1">${fmt(monthly)}<span style="font-size:12px">/mo</span></div>
+          <div style="font-size:9px;color:var(--t3);margin-top:4px;line-height:1.7">
+            Supreme plan<br>
+            ${tabPlan>0?'$'+tabPlan+' tablet plan<br>':''}
+            ${protCost>0?'$'+protCost+' Protect<br>':''}
+            ${ppp?'<span style="color:var(--prog)">'+pppMoLine+'</span>':''}
+          </div>
+        </div>
+      </div>
+      <div style="padding:0 14px 12px">
+        <button onclick="launchWizard()" style="width:100%;padding:10px;background:var(--g);border:none;border-radius:var(--r2);color:#000;font-family:'DM Sans';font-size:11px;font-weight:900;letter-spacing:.5px;text-transform:uppercase;cursor:pointer">▶ Build This Quote</button>
+      </div>
+    </div>`;
+}
+
+function launchWizard(){
+  if(!W.lines||!W.brand||!W.lt) return;
+  resetAll(); setPlan('supreme');
+  const {lines,brand,lt,ppp,pa,tab}=W;
+  const ppptype=wizPPPType(),apr=wizAPR();
+  const apo=brand==='iphone'?(lt==='sw'?75:50):45;
+  S.apoPerDevice=apo; $('apo-inp').value=apo; updateApoTiles(apo);
+  if(ppp&&ppptype){
+    S.finOn=true;S.finType=ppptype;S.breadAPR=apr;
+    $('fin-chk').checked=true;$('fin-opts').style.display='block';
+    $('ft-prog').classList.toggle('on',ppptype==='prog');
+    $('ft-bread').classList.toggle('on',ppptype==='bread');
+    $('apr-sec').style.display=ppptype==='bread'?'block':'none';
+    $('prog-freq-sec').style.display=ppptype==='prog'?'block':'none';
+    if(ppptype==='bread'){$('apr0').classList.toggle('on',apr===0);$('apr14').classList.toggle('on',apr===14.99);}
+  }
+  const lb=wizLineBudget();
+  let assignments=[];
+  if(brand==='iphone'){
+    const self=ppp?wizPickBest(lt==='sw'?WIZ_IPHONES_SW:WIZ_IPHONES_NW,lt,true,lb,apo):wizPickBest(lt==='sw'?WIZ_IPHONES_SW:WIZ_IPHONES_NW,lt,false,Infinity,apo);
+    const devId=self?self.id:(lt==='sw'?'i16e_128':'i13_128'); // SW→16e, NEW→13
+    for(let i=0;i<lines;i++) assignments.push({cat:'v',device:devId,protect:true,tier:12});
+  } else if(brand==='android'){
+    const self=ppp?wizPickBest(WIZ_ANDROID,lt,true,lb,apo):wizPickBest(WIZ_ANDROID,lt,false,Infinity,apo);
+    const devId=self?self.id:WIZ_ANDROID[0];
+    const restId=(ppp&&self&&self.id==='s25'&&lines>1)
+      ?(WIZ_ANDROID.slice(1).find(id=>{const p2=PHONES.find(ph=>ph.id===id);if(!p2)return false;const ml=lt==='new'?(p2.maxLinesNw||p2.maxLines):p2.maxLines;return !ml||(lines-1)<=ml;})||devId)
+      :devId;
+    for(let i=0;i<lines;i++) assignments.push({cat:'v',device:i===0?devId:restId,protect:!BUDGET_ANDROID.includes(i===0?devId:restId)});
+  } else {
+    const half=Math.ceil(lines/2),rest=lines-half;
+    const id1=lt==='sw'?'i16e_128':'i13_128';
+    const ad=PHONES.find(p=>p.id==='s25')||PHONES.find(p=>p.id==='medge');
+    for(let i=0;i<half;i++) assignments.push({cat:'v',device:id1,protect:true,tier:12});
+    for(let i=0;i<rest;i++) assignments.push({cat:'v',device:ad?ad.id:WIZ_ANDROID[0],protect:true});
+  }
+  assignments.forEach(a=>{
+    addLine(a.cat);
+    const l=S.lines[S.lines.length-1];
+    l.lt=lt==='sw'?'switcher':'new';l.device=a.device;
+    if(a.protect){l.protect=true;l.protectTier=a.tier||8;}
+    if(ppp) l.finInclude=true;
+  });
+  if(tab&&ppp){
+    addLine('t');
+    const tl=S.lines[S.lines.length-1];
+    tl.lt=lt==='sw'?'switcher':'new';tl.device=tab;tl.finInclude=true;
+  }
+  if(ppp) autoIncludeAllPPP();
+  renderLines();renderPlanGrid();update();
+  document.getElementById('lines-container').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function resetAll(){
+  S={acct:'new',plan:'supreme',ap:true,aalPlan:'supreme',aalLines:1,txnType:'aal',apoPerDevice:0,apoFin:false,apoSplit:false,apoLeaseAmt:0,finOn:false,finType:'prog',breadAPR:0,progFreq:'monthly',lines:[],nid:1};
+  $('btn-new').classList.add('active');$('btn-aal').classList.remove('active');
+  $('plan-sec').style.display='block';
+  $('aal-sec').style.display='none';
+  ['aal','up','both'].forEach(x=>$('txn-'+x).classList.toggle('on',x==='aal'));
+  $('lines-title').textContent='Step 3 — Lines';
+  $('ap-chk').checked=true;$('ap-chk').disabled=false;$('ap-slide').classList.remove('off');
+  $('fin-chk').checked=false;$('fin-chk').disabled=true;$('fin-opts').style.display='none';
+  $('fin-slide').classList.add('off');
+  $('ft-prog').classList.add('on');$('ft-bread').classList.remove('on');
+  $('apr-sec').style.display='none';
+  $('apo-inp').value=0; updateApoTiles(0);
+  $('aal-plan-sel').value='supreme';
+  $('aal-lines-sel').value='1';
+  $('lines-container').innerHTML='';
+  renderPlanGrid();update();
+}
+
+function autoIncludeAllPPP(){
+  S.lines.forEach(l=>{
+    if(l.cat==='h') return;
+    const dev2=l.byod?null:devById(l.device,l.cat);
+    const linePos=l.cat==='v'?S.lines.filter(x=>x.cat==='v').indexOf(l)+1:null;
+    const pr=l.cat==='v'&&dev2?devPrice(dev2,l.lt,linePos,l.upQual!==false):(dev2?dev2.price:0);
+    l.finInclude=!dev2||pr>=149.99;
+    if(l.skeiwatch) l.skeiwatchFin=true;
+  });
+  if(S.apoPerDevice>0){
+    S.apoFin=true;
+    if($('apo-fin-chk'))$('apo-fin-chk').checked=true;
+    $('apo-split-opts').style.display='block';
+  }
+}
+
+function resetWiz(){
+  W={ppp:null,ppptype:null,approval:0,lines:null,brand:null,lt:null,tab:null,anchortype:null};
+  ['ppp-yes','ppp-no','pt-prog','pt-bread0','pt-bread14',
+   'lines-1','lines-2','lines-3','lines-4','lines-5',
+   'brand-iphone','brand-android','brand-mix',
+   'lt-sw','lt-new','tab-a9','tab-a11'
+  ].forEach(id=>{const el=$('wiz-'+id);if(el)el.classList.remove('on');});
+  ['ppptype-row','approval-row','tab-row'].forEach(id=>{
+    const el=$('wiz-'+id);if(el)el.style.display='none';
+  });
+  if($('wiz-result'))$('wiz-result').style.display='none';
+  if($('wiz-approval-inp'))$('wiz-approval-inp').value='';
+}
+
 let _payoutAP=false;
 let _payoutHI=false;
 
@@ -1852,9 +2402,6 @@ function renderPayout(c){
 
 // DEAL STRIP
 // ============================================================
-let _lowestSelDeal=null;
-let _dealLt={i13:'switcher',i16e:'switcher',sel:'switcher'};
-let _dealSelAp=true;
 
 function toggleDealLt(card){
   _dealLt[card]=_dealLt[card]==='switcher'?'new':'switcher';
@@ -1902,11 +2449,7 @@ function renderDealStrip(){
   // --- Card 4: Select UNL ---
   const sel_lt=_dealLt.sel;
   const sel_sw=sel_lt==='switcher';
-  // SW + AP ON  → moto g play | SW + AP OFF → Icon Plus
-  // NW + AP ON  → moto g play | NW + AP OFF → Debut S3
-  const selDevId = sel_sw
-    ? (_dealSelAp ? 'mgplay' : 'iconp')
-    : (_dealSelAp ? 'mgplay' : 'debs3');
+  const selDevId = 'debs3';
   const selDev=PHONES.find(p=>p.id===selDevId)||PHONES.find(p=>p.id==='icon');
   const sel_device=sel_sw?(selDev.sw_o??selDev.sw):(selDev.nw_o??selDev.nw);
   _lowestSelDeal={p:selDev, price:sel_device};
@@ -1914,8 +2457,9 @@ function renderDealStrip(){
   const sel_act=sel_sw?0:ACT_FEE;
   const sel_sim=0;
   const sel_apo=sel_sw?25:0; // $25 min acc bundle for SW
+  const sel_protect=8;
   const sel_taxable=sel_device+sel_act+sel_sim+sel_apo;
-  const sel_otd=sel_device+sel_plan+sel_act+sel_sim+sel_apo+sel_taxable*TAX;
+  const sel_otd=sel_device+sel_plan+sel_act+sel_sim+sel_apo+sel_protect+sel_taxable*TAX;
   const sel_name=selDev.n.replace(/^(Apple |Samsung |Motorola |motorola |Cricket )/i,'');
 
   const ltToggle=(card,lt)=>`<div onclick="event.stopPropagation();toggleDealLt('${card}')" style="display:inline-flex;gap:0;border:1px solid var(--bd2);border-radius:var(--r2);overflow:hidden;margin-bottom:6px;cursor:pointer">
@@ -1951,8 +2495,7 @@ function renderDealStrip(){
         </span>
       </div>
       <div class="deal-price" style="color:var(--warn)">${fmt(Math.round(sel_otd*100)/100)}</div>
-      <div class="deal-sub">${sel_name} · $40 Select${sel_sw?' · $25 acc':''}</div>
-      <div style="font-size:8px;color:var(--t3);margin-top:3px">· No Protect</div>
+      <div class="deal-sub">${sel_name} · $40 Select${sel_sw?' · $25 acc':''} · Protect</div>
     </div>`;
 }
 
@@ -1977,7 +2520,7 @@ function launchDeal(type){
     setPlan('select');
     S.ap=_dealSelAp;
     addLine('v');
-    const l=S.lines[0]; l.lt=_dealLt.sel; l.device=_lowestSelDeal?_lowestSelDeal.p.id:'';
+    const l=S.lines[0]; l.lt=_dealLt.sel; l.device=_lowestSelDeal?_lowestSelDeal.p.id:''; l.protect=true; l.protectTier=8;
     renderPlanGrid();
   }
   // Re-render lines so device dropdown shows selected value
@@ -1991,7 +2534,6 @@ function launchDeal(type){
 // ============================================================
 // WIZARD
 // ============================================================
-const WIZ_IPHONES=['i16e_128','i13_128'];
 // ── Cash OTD suggestion pools ──
 // SW: iPhone 16e | Android: moto edge, moto g stylus (randomized)
 const CASH_SW_IPHONE  = ['i16e_128'];
@@ -2000,11 +2542,7 @@ const CASH_SW_ANDROID = ['medge','mgsty'];
 const CASH_NW_IPHONE  = ['i13_128'];
 const CASH_NW_ANDROID = ['mgsty','medge'];
 
-const WIZ_IPHONES_SW=['i16e_128','i13_128']; // SW: 16e first
-const WIZ_IPHONES_NW=['i13_128','i16e_128']; // NEW: 13 first
-const WIZ_ANDROID=['s25','medge','mgsty']; // s25=anchor, edge/stylus=fill
 
-let W={ppp:null,ppptype:null,approval:0,lines:null,brand:null,lt:null,tab:null,anchortype:null};
 
 function toggleWizard(){
   const body=$('wizard-body'),chev=$('wizard-chevron');
@@ -2565,214 +3103,172 @@ function showDMCard(){
   const tabLines=S.lines.filter(l=>l.cat==='t');
   const watchLines=S.lines.filter(l=>l.cat==='w');
   const hotspotLines=S.lines.filter(l=>l.cat==='h');
-  const dc=dmDevSummary(voiceLines);
-  const entries=Object.entries(dc);
-  const isSW=voiceLines.some(l=>l.lt==='switcher');
-  const isUp=voiceLines.every(l=>l.lt==='upgrade'&&voiceLines.length>0);
-  const ltLabel=isUp?'Upgrade':isSW?'Switcher':'New Line';
+  const isUp=voiceLines.length>0&&voiceLines.every(l=>l.lt==='upgrade');
 
-  // Device strings per category
-  function catDevStr(lines){
-    const d={};
-    lines.forEach(l=>{
-      const dev=l.byod?null:devById(l.device,l.cat);
-      const n=dev?dev.n.replace(/^(Apple |Samsung |Motorola |motorola |Cricket )/i,''):'BYOD';
-      d[n]=(d[n]||0)+1;
-    });
-    return Object.entries(d).map(([n,c2])=>(c2>1?c2+'x ':'')+n).join(' + ');
-  }
-  const voiceDevStr=entries.map(([n,v])=>(v.count>1?v.count+'x ':'')+n).join('<br>');
-
-  // Savings: FRP vs promo price on voice lines
-  let totalFRP=0,totalDevPrice=0;
-  voiceLines.forEach((l,i)=>{
-    const dev=l.byod?null:devById(l.device,l.cat);
-    if(!dev) return;
-    totalFRP+=dev.frp||0;
-    totalDevPrice+=devPrice(dev,l.lt,i+1,l.upQual!==false);
-  });
-  const savings=totalFRP-totalDevPrice;
-  const savingsStr=savings>1?fmt(savings):null;
-
-  // Accessories — all voice lines including upgrades
-  const allVoice=S.lines.filter(l=>l.cat==='v');
-  const hasProtect=allVoice.some(l=>l.protect);
-  const apoDevCount=allVoice.filter(l=>!l.byod&&l.device&&l.device!=='byod_v').length;
-  const apoTotal=S.apoPerDevice*apoDevCount;
-  const skeiwatchTotal=allVoice.reduce((s,l)=>{
-    const sk=SKEIWATCHES.find(x=>x.id===l.skeiwatch);
-    return s+(sk?sk.price:0);
-  },0);
-  const totalAcc=apoTotal+skeiwatchTotal;
-  const needsIdCheck=isSW&&voiceLines.some(l=>ID_CHECK_DEVS.includes(l.device));
-
-  // Build headline and sub-header based on what's in the quote
-  const hasVoice=voiceLines.length>0;
-  const hasTab=tabLines.length>0;
-  const hasWatch=watchLines.length>0;
-  const hasHotspot=hotspotLines.length>0;
-
-  const headline=`Only ${fmt(c.otdTotal)} Today!`;
-
-  // Sub: device + badges
-  // Group ALL lines by transaction type
-  const txnGroups={};
-  const addToGroup=(lines,catLabel)=>{
-    lines.forEach(l=>{
-      const dev=l.byod?null:devById(l.device,l.cat);
-      const n=dev?dev.n.replace(/^(Apple |Samsung |Motorola |motorola |Cricket )/i,''):(catLabel+' BYOD');
-      const txn=l.lt==='switcher'?'Switcher':l.lt==='upgrade'?'Upgrade':'New Line';
-      txnGroups[txn]=txnGroups[txn]||{};
-      txnGroups[txn][n]=(txnGroups[txn][n]||0)+1;
-    });
-  };
-  addToGroup(voiceLines,'Device');
-  addToGroup(tabLines,'Tablet');
-  addToGroup(watchLines,'Watch');
-  addToGroup(hotspotLines,'Hotspot');
-
-  const txnKeys=Object.keys(txnGroups);
-  const needsTxnSplit=txnKeys.length>1;
-
-  let fullDevStr='';
-  if(needsTxnSplit){
+  function buildCard(ltOverride,upQualOverride){
+    const lines=voiceLines.map(l=>({...l,lt:ltOverride||l.lt,upQual:upQualOverride!==undefined?upQualOverride:l.upQual}));
+    const txnGroups={};
+    const addGroup=(arr)=>{
+      arr.forEach(l=>{
+        const dev=l.byod?null:devById(l.device,l.cat||'v');
+        const n=dev?dev.n.replace(/^(Apple |Samsung |Motorola |motorola |Cricket )/i,''):'BYOD';
+        const txn=l.lt==='switcher'?'Switcher':l.lt==='upgrade'?'Upgrade':'New Line';
+        txnGroups[txn]=txnGroups[txn]||{};
+        txnGroups[txn][n]=(txnGroups[txn][n]||0)+1;
+      });
+    };
+    addGroup(lines); addGroup(tabLines); addGroup(watchLines); addGroup(hotspotLines);
+    const txnKeys=Object.keys(txnGroups);
+    let fullDevStr='';
     txnKeys.forEach(txn=>{
       const devLine=Object.entries(txnGroups[txn]).map(([n,c2])=>(c2>1?c2+'x ':'')+n).join('<br>');
       fullDevStr+=`<div style="margin-bottom:6px"><div style="font-size:9px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;color:rgba(0,0,0,.5);margin-bottom:2px">${txn}</div><div>${devLine}</div></div>`;
     });
-  } else {
-    let devParts=[];
-    if(hasVoice) devParts.push(entries.map(([n,v])=>(v.count>1?v.count+'x ':'')+n).join('<br>'));
-    if(hasTab) devParts.push(catDevStr(tabLines));
-    if(hasWatch) devParts.push(catDevStr(watchLines));
-    if(hasHotspot) devParts.push(catDevStr(hotspotLines));
-    fullDevStr=devParts.map(p=>`<div>${p}</div>`).join('');
-  }
 
-  // Watch credits
-  let watchCreditStr='';
-  watchLines.forEach(l=>{
-    if(l.lt==='upgrade'||l.byod) return;
-    const dev=devById(l.device,'w');
-    if(dev&&dev.credit&&dev.creditMo){
-      const n=dev.n.replace(/^(Apple |Samsung |Motorola |motorola )/i,'');
-      watchCreditStr+=(watchCreditStr?'<br>':'')+n+` — −$${dev.credit}/mo × ${dev.creditMo} mo`;
+    // OTD for this specific lt
+    const lt=ltOverride||voiceLines[0]?.lt;
+    let frpTotal=0,devPriceTotal=0;
+    lines.forEach((l,i)=>{
+      const dev=l.byod?null:devById(l.device,'v');
+      if(!dev) return;
+      frpTotal+=dev.frp||0;
+      devPriceTotal+=devPrice(dev,l.lt,i+1,l.upQual!==false);
+    });
+    const savings=frpTotal-devPriceTotal;
+    const savingsStr=savings>1?fmt(savings):null;
+
+    // Accessories
+    const allV=S.lines.filter(l=>l.cat==='v');
+    const apoTotal=S.apoPerDevice*allV.filter(l=>!l.byod&&l.device&&l.device!=='byod_v').length;
+    const skeiwatchTotal=allV.reduce((s,l)=>{const sk=SKEIWATCHES.find(x=>x.id===l.skeiwatch);return s+(sk?sk.price:0);},0);
+    const totalAcc=apoTotal+skeiwatchTotal;
+    const hasProtect=allV.some(l=>l.protect);
+    const needsIdCheck=lt==='switcher'&&voiceLines.some(l=>ID_CHECK_DEVS.includes(l.device));
+
+    // Recalculate OTD for this specific lt/upQual combo
+    let otdAmt=0;
+    lines.forEach((l,i)=>{
+      const dev=l.byod?null:devById(l.device,'v');
+      if(!dev) return;
+      const dp=devPrice(dev,l.lt,i+1,l.upQual!==false);
+      otdAmt+=dp+dp*TAX;
+    });
+    if(lt!=='upgrade'){
+      const planCost=S.plan&&PLANS.find(p=>p.id===S.plan)?PLANS.find(p=>p.id===S.plan).lines[Math.min(voiceLines.length,5)-1]:0;
+      const actFee=lt==='switcher'?0:ACT_FEE*voiceLines.length;
+      otdAmt+=planCost+actFee+(apoTotal+skeiwatchTotal)*(1+TAX);
+    } else {
+      otdAmt+=(apoTotal+skeiwatchTotal)*(1+TAX);
     }
-  });
 
-  let badges=[];
-  if(hasVoice) badges.push(isUp?(voiceLines.filter(l=>l.upQual===false).length>0?`${voiceLines.filter(l=>l.upQual!==false).length} Qualified · ${voiceLines.filter(l=>l.upQual===false).length} Non-Qualified`:'Qualified Upgrade'):ltLabel);
-  if(hasTab) badges.push(tabLines.length+'x Tablet');
-  if(hasWatch) badges.push(watchLines.length+'x Watch');
-  if(hasHotspot) badges.push(hotspotLines.length+'x Hotspot');
-  if(savingsStr) badges.push(`Save ${savingsStr}`);
-
-  // Build skeiwatch tile (line-by-line format)
-  let skeiTileVal='';
-  const skeiwatchNames=voiceLines.filter(l=>l.skeiwatch).map(l=>{const sk=SKEIWATCHES.find(x=>x.id===l.skeiwatch);return sk?sk.n.replace('Skeiwatch ',''):null;}).filter(Boolean);
-  if(skeiwatchNames.length>0){
+    // Skeiwatch detail
     const swCounts={};
-    voiceLines.filter(l=>l.skeiwatch).forEach(l=>{
+    allV.filter(l=>l.skeiwatch).forEach(l=>{
       const sk=SKEIWATCHES.find(x=>x.id===l.skeiwatch);if(!sk)return;
       swCounts[l.skeiwatch]=swCounts[l.skeiwatch]||{n:sk.n.replace('Skeiwatch ',''),price:sk.price,count:0};
       swCounts[l.skeiwatch].count++;
     });
-    skeiTileVal=Object.values(swCounts).map(s=>(s.count>1?s.count+'x ':'')+s.n+' — '+fmt(s.price)).join('<br>');
-  }
+    const skeiTileVal=Object.keys(swCounts).length?Object.values(swCounts).map(s=>(s.count>1?s.count+'x ':'')+s.n+' — '+fmt(s.price)).join('<br>'):'';
 
-  const badgeHtml=badges.map(b=>`<span style="background:rgba(0,0,0,.18);padding:3px 10px;border-radius:4px;font-size:11px;font-weight:800;white-space:nowrap">${b}</span>`).join('');
+    // Watch credits
+    let watchCreditStr='';
+    watchLines.forEach(l=>{
+      if(l.lt==='upgrade'||l.byod) return;
+      const dev=devById(l.device,'w');
+      if(dev&&dev.credit&&dev.creditMo){
+        const n=dev.n.replace(/^(Apple |Samsung |Motorola |motorola )/i,'');
+        watchCreditStr+=(watchCreditStr?'<br>':'')+n+` — −$${dev.credit}/mo × ${dev.creditMo} mo`;
+      }
+    });
 
-  const sub=`<div style="font-size:18px;font-weight:900;color:rgba(0,0,0,.85);line-height:1.3;margin-bottom:6px">${fullDevStr}</div><div style="display:flex;gap:5px;flex-wrap:wrap">${badgeHtml}</div>`;
+    // Headline + badges
+    const headline=`Only ${fmt(otdAmt)} Today!`;
+    const badges=[];
+    if(upQualOverride===true) badges.push('Qualified Upgrade');
+    else if(upQualOverride===false) badges.push('Non-Qualified — FRP Pricing');
+    else if(lt==='switcher') badges.push('Switcher');
+    else badges.push('New Line');
+    if(savingsStr) badges.push('Save '+savingsStr);
+    const badgeHtml=badges.map(b=>`<span style="background:rgba(0,0,0,.18);padding:3px 10px;border-radius:4px;font-size:11px;font-weight:800;white-space:nowrap">${b}</span>`).join('');
+    const sub=`<div style="font-size:18px;font-weight:900;color:rgba(0,0,0,.85);line-height:1.3;margin-bottom:6px">${fullDevStr}</div><div style="display:flex;gap:5px;flex-wrap:wrap">${badgeHtml}</div>`;
 
-  // Build tiles array — then render smartly (never orphan)
-  const tileData=[];
-  if(!isUp&&hasVoice) tileData.push({l:'Monthly',v:fmt(c.grandMo)+'/mo',c:'rgba(255,255,255,.4)'});
-  // Always show all PPP options when any device qualifies (≥$149.99)
-  if(c.hasQual){
-    const fb=c.finBase>0?c.finBase:(()=>{
-      // Recalc finBase from devices + acc if PPP not toggled
-      const devTotal=voiceLines.reduce((s,l)=>{
-        const dev=l.byod?null:devById(l.device,l.cat);
-        if(!dev) return s;
-        return s+devPrice(dev,l.lt,voiceLines.indexOf(l)+1,l.upQual!==false);
-      },0);
-      const tabTotal=tabLines.reduce((s,l)=>{const t=devById(l.device,'t');return s+(t?t.price:0);},0);
-      return devTotal+tabTotal+totalAcc;
-    })();
-    const progTotal=fb*(1+PROG_FEE);
-    const progMo=Math.ceil(progTotal/3*100)/100;
-    tileData.push({l:'Progressive /mo',v:'$'+progMo.toFixed(2)+' × 3',c:'#f97316'});
-    const bt0=fb*(1+TAX);
-    const bread0=Math.ceil(bt0/24*100)/100;
-    tileData.push({l:'Bread 0% APR',v:'$'+bread0.toFixed(2)+' × 24',c:'#3b82f6'});
-    const r=14.99/100/12;
-    const bread14=Math.ceil(bt0*r*Math.pow(1+r,24)/(Math.pow(1+r,24)-1)*100)/100;
-    tileData.push({l:'Bread 14.99% APR',v:'$'+bread14.toFixed(2)+' × 24',c:'#6366f1'});
-  }
-  if(apoTotal>0||skeiwatchTotal>0){
-    if(apoTotal>0&&skeiwatchTotal>0){
-      // Both — show each + combined
-      tileData.push({l:'APO',v:fmt(apoTotal),c:'rgba(255,255,255,.3)'});
-      tileData.push({l:'Skeiwatch(es)',v:fmt(skeiwatchTotal),c:'rgba(255,255,255,.3)'});
-      tileData.push({l:'Total Accessories',v:fmt(totalAcc),c:'#00c85f',span:true});
-    } else if(apoTotal>0){
-      tileData.push({l:'APO',v:fmt(apoTotal),c:'rgba(255,255,255,.3)'});
-    } else {
-      // Skeiwatch only — still counts toward PPP
-      tileData.push({l:'Skeiwatch(es) — counts toward PPP',v:fmt(skeiwatchTotal),c:'rgba(255,255,255,.3)',span:true});
+    // Tiles
+    const tileData=[];
+    if(lt!=='upgrade') tileData.push({l:'Monthly',v:fmt(c.grandMo)+'/mo',c:'rgba(255,255,255,.4)'});
+    if(c.hasQual){
+      const devT=lines.reduce((s,l,i)=>{const dev=l.byod?null:devById(l.device,'v');return s+(dev?devPrice(dev,l.lt,i+1,l.upQual!==false):0);},0);
+      const tabT=tabLines.reduce((s,l)=>{const t=devById(l.device,'t');return s+(t?t.price:0);},0);
+      const fb=devT+tabT+totalAcc;
+      const progTotal=fb*(1+PROG_FEE);
+      const progDivisor={weekly:12,biweekly:6,monthly:3}[S.progFreq]||3;
+      const progLabel={weekly:'Weekly × 12',biweekly:'Bi-Weekly × 6',monthly:'Monthly × 3'}[S.progFreq]||'Monthly × 3';
+      const progFreqSuffix={weekly:'wk',biweekly:'2wk',monthly:'mo'}[S.progFreq]||'mo';
+      const progPmt=Math.ceil(progTotal/progDivisor*100)/100;
+      tileData.push({l:'Progressive',v:'$'+progPmt.toFixed(2)+'/'+progFreqSuffix+' · '+progLabel,c:'#f97316',small:true,span:true});
+      const bt0=fb*(1+TAX);
+      tileData.push({l:'Bread 0% APR',v:'$'+(Math.ceil(bt0/24*100)/100).toFixed(2)+' × 24',c:'#3b82f6'});
+      const r=14.99/100/12;
+      tileData.push({l:'Bread 14.99% APR',v:'$'+(Math.ceil(bt0*r*Math.pow(1+r,24)/(Math.pow(1+r,24)-1)*100)/100).toFixed(2)+' × 24',c:'#6366f1'});
     }
-  }
-  if(skeiTileVal) tileData.push({l:'Skeiwatch',v:skeiTileVal,c:'rgba(255,255,255,.3)',small:true,span:true});
-  if(hasProtect) tileData.push({l:'Protect',v:'Included',c:'rgba(255,255,255,.3)'});
-  if(hasTab) tileData.push({l:'Tablet Plan',v:fmt(tabLines.length*TABLET_PLAN)+'/mo',c:'rgba(255,255,255,.3)'});
-  if(hasWatch) tileData.push({l:'Watch Plan',v:fmt(watchLines.length*WATCH_PLAN)+'/mo',c:'rgba(255,255,255,.3)'});
-  if(watchCreditStr) tileData.push({l:'Watch Credits',v:watchCreditStr,c:'#00c85f',small:true,span:true});
-
-  // Smart grid: 0 tiles = no grid; 1 tile = full width; odd = last goes full width; even = normal 2-col
-  let tilesHtml='';
-  if(tileData.length>0){
-    const mkTile=(d,span)=>`
-      <div style="background:#161616;border-right:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07);padding:12px 14px;${span?'grid-column:span 2;border-right:none;':''}">
-        <div style="font-size:8px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;color:${d.c};margin-bottom:5px">${d.l}</div>
-        ${d.small
-          ?`<div style="font-size:11px;font-weight:700;color:#fff;line-height:1.6">${d.v}</div>`
-          :`<div style="font-family:'Bebas Neue';font-size:26px;color:#fff;line-height:1">${d.v}</div>`}
-      </div>`;
-    if(tileData.length===1){
-      tilesHtml=mkTile(tileData[0],true);
-    } else {
-      // Non-span tiles first, then span tiles at end
-      const normalTiles=tileData.filter(d=>!d.span);
-      const spanTiles=tileData.filter(d=>d.span);
-      const isOdd=normalTiles.length%2===1;
-      normalTiles.forEach((d,i)=>{
-        const isLast=i===normalTiles.length-1;
-        tilesHtml+=mkTile(d,isLast&&isOdd);
-      });
-      spanTiles.forEach(d=>tilesHtml+=mkTile(d,true));
+    // APO: effective per-device = (apo bundle + skeiwatch) / device count — matches step 4 logic
+    const apoDevCount=allV.filter(l=>!l.byod&&l.device&&l.device!=='byod_v').length;
+    const effectivePerDev=apoDevCount>0?totalAcc/apoDevCount:0;
+    if(S.apoPerDevice>0||skeiwatchTotal>0){
+      const includes=[];
+      if(S.apoPerDevice>0) includes.push(fmt(apoTotal)+' APO');
+      Object.values(swCounts).forEach(s=>includes.push(s.count+'x '+s.n+' — '+fmt(s.price*(s.count||1))));
+      const includesHtml=includes.join('<br>');
+      tileData.push({l:'Total Accessories',v:fmt(totalAcc),sub:includesHtml,c:'rgba(255,255,255,.4)'});
+      tileData.push({l:'Total APO',v:fmt(effectivePerDev),sub:includesHtml,c:'rgba(255,255,255,.4)'});
     }
+    // Features tile — count all add-ons across lines
+    const featureCounts={};
+    allV.forEach(l=>{
+      if(l.protect) featureCounts['Protect']=(featureCounts['Protect']||0)+1;
+      if(l.upgplus) featureCounts['Upgrade Plus']=(featureCounts['Upgrade Plus']||0)+1;
+      if(l.intl) featureCounts['Intl Calling']=(featureCounts['Intl Calling']||0)+1;
+      if(l.hotspot) featureCounts['Hotspot']=(featureCounts['Hotspot']||0)+1;
+    });
+    const featKeys=Object.keys(featureCounts);
+    if(featKeys.length>0){
+      const featLines=featKeys.map(k=>featureCounts[k]+'x '+k).join('<br>');
+      tileData.push({l:'Features',v:featLines,c:'rgba(255,255,255,.4)',small:true,span:featKeys.length>2});
+    }
+    if(tabLines.length) tileData.push({l:'Tablet Plan',v:fmt(tabLines.length*TABLET_PLAN)+'/mo',c:'rgba(255,255,255,.3)'});
+    if(watchLines.length) tileData.push({l:'Watch Plan',v:fmt(watchLines.length*WATCH_PLAN)+'/mo',c:'rgba(255,255,255,.3)'});
+    if(watchCreditStr) tileData.push({l:'Watch Credits',v:watchCreditStr,c:'#00c85f',small:true,span:true});
+
+    const mkTile=(d,span)=>`<div style="background:#161616;border-right:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07);padding:12px 14px;${span?'grid-column:span 2;border-right:none;':''}"><div style="font-size:8px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;color:${d.c};margin-bottom:5px">${d.l}</div>${d.small?`<div style="font-size:11px;font-weight:700;color:#fff;line-height:1.6">${d.v}</div>`:`<div style="font-family:'Bebas Neue';font-size:26px;color:#fff;line-height:1">${d.v}</div>`}${d.sub?`<div style="font-size:9px;color:rgba(255,255,255,.35);margin-top:5px;line-height:1.6">Includes:<br>${d.sub}</div>`:''}</div>`;
+    const normalTiles=tileData.filter(d=>!d.span);
+    const spanTiles=tileData.filter(d=>d.span);
+    const isOdd=normalTiles.length%2===1;
+    let tilesHtml='';
+    if(tileData.length===1){ tilesHtml=mkTile(tileData[0],true); }
+    else { normalTiles.forEach((d,i)=>tilesHtml+=mkTile(d,i===normalTiles.length-1&&isOdd)); spanTiles.forEach(d=>tilesHtml+=mkTile(d,true)); }
+
+    let wide='';
+    if(lt!=='upgrade'){
+      let req='Requires Supreme Unlimited Plan';
+      if(needsIdCheck) req+=' + CheckID validation with US Govt ID';
+      wide=`<div style="padding:8px 14px;font-size:9px;color:rgba(255,255,255,.3);line-height:1.5;border-bottom:1px solid rgba(255,255,255,.06)">${req}</div>`;
+    }
+    return {headline,sub,tilesHtml,wide};
   }
 
-  // Req line
-  let wide='';
-  if(!isUp&&hasVoice){
-    let req='Requires Supreme Unlimited Plan';
-    if(needsIdCheck) req+=' + CheckID validation with US Govt ID';
-    wide=`<div style="padding:8px 14px;font-size:9px;color:rgba(255,255,255,.3);line-height:1.5;border-bottom:1px solid rgba(255,255,255,.06)">${req}</div>`;
-  }
+  const cards=isUp?[buildCard('upgrade',true),buildCard('upgrade',false)]:[buildCard('switcher'),buildCard('new')];
 
-  $('dm-headline').textContent=headline;
-  $('dm-subheadline').innerHTML=sub;
-  $('dm-tiles').innerHTML=tilesHtml;
-  $('dm-wide').innerHTML=wide;
+  const renderCardHtml=d=>`<div style="background:#0d0d0d;border-radius:10px;overflow:hidden;border:1px solid rgba(0,169,79,.25);margin-bottom:12px"><div style="background:linear-gradient(135deg,#00a94f,#00c85f);padding:18px 20px 14px"><div style="font-family:'Bebas Neue';font-size:42px;color:#000;line-height:1;letter-spacing:.5px">${d.headline}</div><div style="font-size:14px;font-weight:900;color:rgba(0,0,0,.75);margin-top:7px;line-height:1.4;letter-spacing:.2px">${d.sub}</div></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid rgba(255,255,255,.06)">${d.tilesHtml}</div>${d.wide}<div style="padding:8px 16px;border-top:1px solid rgba(255,255,255,.05)"><div style="font-size:8px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.18)">Internal Use Only</div></div></div>`;
+
+  $('dm-cards-container').innerHTML=cards.map(renderCardHtml).join('');
   $('dm-overlay').style.display='block';
   document.body.style.overflow='hidden';
 }
 
+
 function saveDMCard(){
   const btn=$('dm-save-btn');
   btn.textContent='Saving...';
-  const card=$('dm-card');
+  const card=$('dm-cards-container');
   // Load html2canvas dynamically if not loaded
   function doCapture(){
     html2canvas(card,{
@@ -2858,7 +3354,7 @@ function saveDMPng(){
   const btn=$('dm-save-btn');
   btn.textContent='Generating...';
   btn.disabled=true;
-  const card=$('dm-card');
+  const card=$('dm-cards-container');
 
   function doCapture(){
     html2canvas(card,{
@@ -2897,6 +3393,32 @@ function saveDMPng(){
   }
 }
 
+const RSM_USERS={
+  '747':'gsanchez',
+  '752':'ecruz',
+  '775':'mgomez',
+  '768':'jmanzo',
+  '777':'jsauceda',
+  '769':'rgarcia',
+  'DM':'jgarcia',
+  'dm':'jgarcia',
+  'jg2646':'jgarcia'
+};
+
+function doRSMLogin(){
+  const u=document.getElementById('rsm-user').value.trim();
+  const p=document.getElementById('rsm-pin').value.trim().toLowerCase();
+  const err=document.getElementById('rsm-error');
+  if(RSM_USERS[u]&&RSM_USERS[u]===p){
+    document.getElementById('rsm-overlay').style.display='none';
+    showDMCard();
+  } else {
+    err.style.display='block';
+    document.getElementById('rsm-pin').value='';
+    document.getElementById('rsm-pin').focus();
+  }
+}
+
 window.onerror=function(msg,src,line,col,err){
   document.body.insertAdjacentHTML('beforeend',
     `<div style="position:fixed;bottom:0;left:0;right:0;background:#c00;color:#fff;padding:12px;font-size:12px;z-index:9999;word-break:break-all">
@@ -2915,27 +3437,44 @@ try {
     </div>`);
 }
 </script>
+<div style="text-align:center;padding:16px 14px 24px">
+  <a href="Quote Tool Feedback – Fill out form" target="_blank"
+    style="display:inline-flex;align-items:center;gap:7px;padding:10px 20px;background:var(--s2);border:1px solid var(--bd2);border-radius:var(--r);color:var(--t2);text-decoration:none;font-size:11px;font-weight:700;letter-spacing:.3px">
+    📝 Quote Tool Feedback
+  </a>
+</div>
+<!-- RSM LOGIN OVERLAY -->
+<div id="rsm-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:9998;align-items:center;justify-content:center;backdrop-filter:blur(4px)">
+  <div style="width:300px;background:#111;border:1px solid #222;border-radius:12px;overflow:hidden">
+    <div style="background:linear-gradient(135deg,#00a94f,#00c85f);padding:20px 22px 16px">
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:24px;color:#000;letter-spacing:.5px">Price Card</div>
+      <div style="font-size:10px;font-weight:700;color:rgba(0,0,0,.5)">RSM Access Required</div>
+    </div>
+    <div style="padding:20px 22px 22px">
+      <div style="margin-bottom:12px">
+        <label style="display:block;font-size:9px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;color:#555;margin-bottom:6px">Username</label>
+        <input type="text" id="rsm-user" placeholder="" autocomplete="off" autocapitalize="none" style="width:100%;padding:10px 12px;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:6px;color:#fff;font-family:'DM Sans';font-size:14px;box-sizing:border-box;outline:none"/>
+      </div>
+      <div style="margin-bottom:4px">
+        <label style="display:block;font-size:9px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;color:#555;margin-bottom:6px">PIN</label>
+        <input type="password" id="rsm-pin" placeholder="••••••••" onkeydown="if(event.key==='Enter')doRSMLogin()" style="width:100%;padding:10px 12px;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:6px;color:#fff;font-family:'DM Sans';font-size:14px;box-sizing:border-box;outline:none"/>
+      </div>
+      <div id="rsm-error" style="display:none;font-size:10px;color:#ef4444;margin:8px 0 10px;font-weight:700">Incorrect credentials</div>
+      <div style="display:flex;gap:8px;margin-top:14px">
+        <button onclick="document.getElementById('rsm-overlay').style.display='none'" style="flex:1;padding:10px;background:#1a1a1a;border:1px solid #333;border-radius:6px;color:#aaa;font-family:'DM Sans';font-size:11px;font-weight:700;cursor:pointer">Cancel</button>
+        <button onclick="doRSMLogin()" style="flex:2;padding:10px;background:#00a94f;border:none;border-radius:6px;color:#000;font-family:'DM Sans';font-size:12px;font-weight:900;cursor:pointer">Sign In</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- DM CARD MODAL -->
 <div id="dm-overlay" onclick="if(event.target===this)closeDMCard()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:9999;overflow-y:auto;padding:20px;backdrop-filter:blur(4px)">
   <div style="max-width:400px;margin:0 auto">
-    <!-- Card -->
-    <div id="dm-card" style="background:#0d0d0d;border-radius:10px;overflow:hidden;border:1px solid rgba(0,169,79,.25)">
-      <!-- Green header -->
-      <div style="background:linear-gradient(135deg,#00a94f,#00c85f);padding:18px 20px 14px">
-        <div id="dm-headline" style="font-family:'Bebas Neue';font-size:42px;color:#000;line-height:1;letter-spacing:.5px"></div>
-        <div id="dm-subheadline" style="font-size:14px;font-weight:900;color:rgba(0,0,0,.75);margin-top:7px;line-height:1.4;letter-spacing:.2px"></div>
-      </div>
-      <!-- Tile grid -->
-      <div id="dm-tiles" style="display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid rgba(255,255,255,.06)"></div>
-      <!-- Wide tiles -->
-      <div id="dm-wide"></div>
-      <!-- Internal footer -->
-      <div style="padding:8px 16px;border-top:1px solid rgba(255,255,255,.05)">
-        <div style="font-size:8px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.18)">Internal Use Only</div>
-      </div>
-    </div>
+    <!-- Cards rendered here -->
+    <div id="dm-cards-container"></div>
     <!-- Buttons -->
-    <div style="display:flex;gap:8px;margin-top:10px">
+    <div style="display:flex;gap:8px;margin-top:4px">
       <button onclick="closeDMCard()" style="flex:1;padding:11px;background:#1a1a1a;border:1px solid #333;border-radius:var(--r2);color:#aaa;font-family:'DM Sans';font-size:11px;font-weight:700;cursor:pointer">Close</button>
       <button id="dm-copy-btn" onclick="copyDMCard()" style="flex:1;padding:11px;background:#1a1a1a;border:1px solid #444;border-radius:var(--r2);color:#ddd;font-family:'DM Sans';font-size:11px;font-weight:700;cursor:pointer">Copy Text</button>
       <button id="dm-save-btn" onclick="saveDMPng()" style="flex:2;padding:11px;background:var(--g);border:none;border-radius:var(--r2);color:#000;font-family:'DM Sans';font-size:11px;font-weight:900;cursor:pointer">Save PNG</button>
